@@ -1,0 +1,1231 @@
+<mxfile host="app.diagrams.net" agent="Codex" pages="4">
+  <diagram id="full-traceability" name="Full Traceability Graph">
+    <mxGraphModel dx="2076" dy="2627" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ft-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1" value="D4 Full Traceability Graph" vertex="1">
+          <mxGeometry height="40" width="500" x="40" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="F1 Native Android Mobile Client" vertex="1">
+          <mxGeometry height="60" width="230" x="60" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="F2 Parcel Status Tracking Page" vertex="1">
+          <mxGeometry height="60" width="230" x="60" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="f3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="F3 Address Auto-fill and Validation" vertex="1">
+          <mxGeometry height="60" width="230" x="60" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="d-web" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" value="Design: Web Application Container" vertex="1">
+          <mxGeometry height="55" width="240" x="360" y="-130" as="geometry" />
+        </mxCell>
+        <mxCell id="d-android" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" value="Design: Android Mobile App Container" vertex="1">
+          <mxGeometry height="55" width="240" x="480" y="-15" as="geometry" />
+        </mxCell>
+        <mxCell id="d-backend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" value="Design: Express Backend API Container" vertex="1">
+          <mxGeometry height="55" width="240" x="330" y="573" as="geometry" />
+        </mxCell>
+        <mxCell id="d-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" value="Design: PostgreSQL Database Container" vertex="1">
+          <mxGeometry height="55" width="240" x="350" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="d-ci" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" value="Design: CI and SonarCloud Pipeline" vertex="1">
+          <mxGeometry height="55" width="240" x="350" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="web-login" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Web LoginPage.jsx" vertex="1">
+          <mxGeometry height="45" width="220" x="720" y="-510" as="geometry" />
+        </mxCell>
+        <mxCell id="web-track" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Web TrackingPage.jsx" vertex="1">
+          <mxGeometry height="45" width="220" x="980" y="-420" as="geometry" />
+        </mxCell>
+        <mxCell id="web-create" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Web CreateShipmentPage.jsx" vertex="1">
+          <mxGeometry height="45" width="220" x="1040" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="web-history" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Web HistoryPage.jsx" vertex="1">
+          <mxGeometry height="45" width="220" x="1140" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="and-nav" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android AppNavigation.kt" vertex="1">
+          <mxGeometry height="45" width="220" x="1270" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="and-create" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android CreateShipmentScreen.kt" vertex="1">
+          <mxGeometry height="45" width="220" x="870" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="and-history" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android HistoryScreen.kt" vertex="1">
+          <mxGeometry height="45" width="220" x="770" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="and-session" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android SessionManager.kt" vertex="1">
+          <mxGeometry height="45" width="220" x="740" y="1270" as="geometry" />
+        </mxCell>
+        <mxCell id="and-zip" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android ThaiPostalCodes.kt" vertex="1">
+          <mxGeometry height="45" width="220" x="740" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="and-api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android ApiService.kt / RetrofitClient.kt" vertex="1">
+          <mxGeometry height="45" width="220" x="990" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="server" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Backend server.js" vertex="1">
+          <mxGeometry height="45" width="230" x="1460" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="users" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Backend routes/users.js" vertex="1">
+          <mxGeometry height="45" width="230" x="1660" y="-140" as="geometry" />
+        </mxCell>
+        <mxCell id="shipments" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Backend routes/shipments.js" vertex="1">
+          <mxGeometry height="45" width="230" x="1790" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="notif-act" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Backend notifications.js / activity.js" vertex="1">
+          <mxGeometry height="45" width="230" x="1090" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Backend db.js" vertex="1">
+          <mxGeometry height="45" width="230" x="1920" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="schema" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="PostgreSQL setup.sql" vertex="1">
+          <mxGeometry height="45" width="230" x="1560" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="ci" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="GitHub Actions ci.yml" vertex="1">
+          <mxGeometry height="45" width="230" x="1110" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="sonar" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="sonar-project.properties" vertex="1">
+          <mxGeometry height="45" width="230" x="1100" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="tests" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="Backend Jest / Supertest tests" vertex="1">
+          <mxGeometry height="50" width="190" x="2480" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="manual" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="Manual web + Android walkthrough" vertex="1">
+          <mxGeometry height="50" width="190" x="2130" y="-110" as="geometry" />
+        </mxCell>
+        <mxCell id="history-test" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="Two-account history isolation check" vertex="1">
+          <mxGeometry height="50" width="190" x="2305" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="android-tests" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="Android unit tests" vertex="1">
+          <mxGeometry height="50" width="190" x="2160" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="sonar-test" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="SonarCloud quality report" vertex="1">
+          <mxGeometry height="50" width="190" x="1940" y="980" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-style-note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=14" value="Blue arrows = feature mapping; Orange = CR/design to code; Green = client/API call; Purple = backend/database dependency; Red = tests/quality" vertex="1">
+          <mxGeometry height="30" width="650" x="10" y="1630" as="geometry" />
+        </mxCell>
+        <mxCell id="e-f1-and" edge="1" parent="1" source="f1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="d-android">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="175" y="90" />
+              <mxPoint x="550" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-f1-back" edge="1" parent="1" source="f1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="d-backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-f2-web" edge="1" parent="1" source="f2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="d-web">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-f2-and" edge="1" parent="1" source="f2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="d-android">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-f2-back" edge="1" parent="1" source="f2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="d-backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-f3-web" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="310" />
+            </Array>
+            <mxPoint x="270" y="310.1111111111113" as="sourcePoint" />
+            <mxPoint x="520" y="-75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-f3-and" edge="1" parent="1" source="f3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="d-android">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-web-login" edge="1" parent="1" source="d-web" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="web-login">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="-170" />
+              <mxPoint x="880" y="-170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-web-track" edge="1" parent="1" source="d-web" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="web-track">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="-140" />
+              <mxPoint x="1090" y="-140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-web-create" edge="1" parent="1" source="d-web" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="web-create">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-web-history" edge="1" parent="1" source="d-web" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="web-history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-and-nav" edge="1" parent="1" source="d-android" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="and-nav">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-and-track" edge="1" parent="1" source="d-android" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="and-track">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-and-create" edge="1" parent="1" source="d-android" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="and-create">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-and-history" edge="1" parent="1" source="d-android" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="and-history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-and-session" edge="1" parent="1" source="d-android" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="and-session">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="1293" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-and-zip" edge="1" parent="1" source="d-android" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="and-zip">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="13" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-and-api" edge="1" parent="1" source="and-track" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="and-api">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-back-server" edge="1" parent="1" source="d-backend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="server">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-back-users" edge="1" parent="1" source="d-backend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-back-ship" edge="1" parent="1" source="d-backend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-back-notif" edge="1" parent="1" source="d-backend" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="notif-act">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-db-schema" edge="1" parent="1" source="d-db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="schema">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1270" y="757" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-login-users" edge="1" parent="1" source="web-login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-track-ship" edge="1" parent="1" source="web-track" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="shipments">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="-200" />
+              <mxPoint x="1520" y="-200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-create-ship" edge="1" parent="1" source="web-create" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-history-ship" edge="1" parent="1" source="web-history" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-andtrack-api" edge="1" parent="1" source="and-track" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="and-api">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="347" />
+              <mxPoint x="1080" y="347" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-andcreate-api" edge="1" parent="1" source="and-create" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="and-api">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="850" y="570" />
+              <mxPoint x="1020" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-andcreate-zip" edge="1" parent="1" source="and-create" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="and-zip">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-andhist-api" edge="1" parent="1" source="and-history" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="and-api">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="827" />
+              <mxPoint x="1100" y="827" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-api-users" edge="1" parent="1" source="and-api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-api-ship" edge="1" parent="1" source="and-api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="shipments">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="730" />
+              <mxPoint x="1905" y="730" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-users-db" edge="1" parent="1" source="users" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ship-db" edge="1" parent="1" source="shipments" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="db">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1960" y="510" />
+              <mxPoint x="1970" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-notif-db" edge="1" parent="1" source="notif-act" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="db">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2090" y="323" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-db-sql" edge="1" parent="1" source="db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="schema">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ci-tests" edge="1" parent="1" source="ci" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-sonar-report" edge="1" parent="1" source="sonar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="sonar-test">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-web-manual" edge="1" parent="1" source="web-track" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="manual">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-history-check" edge="1" parent="1" source="web-history" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="history-test">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-zip-tests" edge="1" parent="1" source="and-zip" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="android-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j-SSuNc6cMiLAqHURoI4-1" edge="1" parent="1" source="d-android" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="and-track" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="600" y="40" as="sourcePoint" />
+            <mxPoint x="1100" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="and-track" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android TrackingScreen.kt" vertex="1">
+          <mxGeometry height="45" width="220" x="910" y="145" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="affected-traceability" name="Affected-Only Traceability Graph">
+    <mxGraphModel dx="1868" dy="2484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <mxCell id="affected-updated-banner" value="UPDATED: Affected-Only graph now includes extra direct edges for server.js, notifications/activity, DB, CI, Sonar, and history checks." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d79b00;strokeWidth=3;fontStyle=1;fontSize=14" vertex="1" parent="1"><mxGeometry x="40" y="690" width="980" height="50" as="geometry"/></mxCell>
+        <mxCell id="af-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1" value="D4 Affected-Only Traceability Graph" vertex="1">
+          <mxGeometry height="40" width="560" x="40" y="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="history-session-note" value="Explicit Android links: SessionManager.kt stores login session, AppNavigation.kt opens HistoryScreen.kt, and HistoryScreen.kt calls ApiService/RetrofitClient." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#0288d1;strokeWidth=3;fontStyle=1;fontSize=13" vertex="1" parent="1"><mxGeometry x="650" y="620" width="620" height="55" as="geometry"/></mxCell>
+        <mxCell id="af-legend" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=14" value="Blue arrows = feature to CR; Orange = CR to affected code; Green = client/API dependency; Purple = backend/database dependency; Red = tests/quality" vertex="1">
+          <mxGeometry height="30" width="900" x="40" y="1260" as="geometry" />
+        </mxCell>
+        <mxCell id="af-f1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="F1 Android Client" vertex="1">
+          <mxGeometry height="55" width="200" x="50" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="af-f2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="F2 Parcel Tracking" vertex="1">
+          <mxGeometry height="55" width="200" x="50" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="af-f3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="F3 Address Auto-fill" vertex="1">
+          <mxGeometry height="55" width="200" x="50" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="cr01" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" value="CR-01 Web Login Auth Fix" vertex="1">
+          <mxGeometry height="45" width="230" x="330" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cr02" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" value="CR-02 Backend PostgreSQL Route Fixes" vertex="1">
+          <mxGeometry height="45" width="230" x="330" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="cr03" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" value="CR-03 Tracking With Cloud Database" vertex="1">
+          <mxGeometry height="45" width="230" x="330" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="cr04" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" value="CR-04 Render Cloud Deployment" vertex="1">
+          <mxGeometry height="45" width="230" x="330" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="cr05" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" value="CR-05 Native Android Mobile Client" vertex="1">
+          <mxGeometry height="45" width="230" x="330" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="cr06" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" value="CR-06 Postal Code Auto-fill" vertex="1">
+          <mxGeometry height="45" width="230" x="330" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="cr07" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" value="CR-07 Backend Tests" vertex="1">
+          <mxGeometry height="45" width="230" x="330" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="cr08" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" value="CR-08 CI and SonarCloud" vertex="1">
+          <mxGeometry height="45" width="230" x="320" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="cr09" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" value="CR-09 History Page Data Leak Fix" vertex="1">
+          <mxGeometry height="45" width="230" x="320" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="af-web-login" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Web LoginPage.jsx" vertex="1">
+          <mxGeometry height="40" width="220" x="650" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="af-web-track" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Web TrackingPage.jsx" vertex="1">
+          <mxGeometry height="40" width="220" x="650" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="af-web-create" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Web CreateShipmentPage.jsx" vertex="1">
+          <mxGeometry height="40" width="220" x="650" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="af-web-history" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Web HistoryPage.jsx" vertex="1">
+          <mxGeometry height="40" width="220" x="650" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="af-and-nav" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android AppNavigation.kt" vertex="1">
+          <mxGeometry height="40" width="220" x="650" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="af-and-track" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android TrackingScreen.kt" vertex="1">
+          <mxGeometry height="40" width="220" x="650" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="af-and-create" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android CreateShipmentScreen.kt" vertex="1">
+          <mxGeometry height="40" width="220" x="650" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="af-and-history" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android HistoryScreen.kt" vertex="1">
+          <mxGeometry height="40" width="220" x="650" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="af-and-session" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android SessionManager.kt" vertex="1">
+          <mxGeometry height="40" width="220" x="650" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="af-and-zip" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android ThaiPostalCodes.kt" vertex="1">
+          <mxGeometry height="40" width="220" x="650" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="af-and-api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="Android ApiService / RetrofitClient" vertex="1">
+          <mxGeometry height="40" width="220" x="660" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="af-users" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Backend users.js" vertex="1">
+          <mxGeometry height="40" width="220" x="1520" y="-260" as="geometry" />
+        </mxCell>
+        <mxCell id="af-ship" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Backend shipments.js" vertex="1">
+          <mxGeometry height="40" width="220" x="1580" y="-150" as="geometry" />
+        </mxCell>
+        <mxCell id="af-not-act" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Backend notifications.js / activity.js" vertex="1">
+          <mxGeometry height="40" width="220" x="1180" y="-50" as="geometry" />
+        </mxCell>
+        <mxCell id="af-server" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Backend server.js" vertex="1">
+          <mxGeometry height="40" width="220" x="1300" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="af-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="Backend db.js" vertex="1">
+          <mxGeometry height="40" width="220" x="880" y="-55" as="geometry" />
+        </mxCell>
+        <mxCell id="af-schema" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="PostgreSQL setup.sql" vertex="1">
+          <mxGeometry height="40" width="220" x="980" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="af-tests" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="Jest / Supertest tests" vertex="1">
+          <mxGeometry height="45" width="210" x="2020" y="-100" as="geometry" />
+        </mxCell>
+        <mxCell id="af-ci" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="GitHub Actions" vertex="1">
+          <mxGeometry height="45" width="210" x="1870" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="af-sonar" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="SonarCloud" vertex="1">
+          <mxGeometry height="45" width="210" x="1790" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="af-hist-check" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="Two-account history isolation check" vertex="1">
+          <mxGeometry height="45" width="210" x="2180" y="-250" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-f1-cr04" edge="1" parent="1" source="af-f1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="cr04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-f1-cr05" edge="1" parent="1" source="af-f1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="cr05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-f2-cr03" edge="1" parent="1" source="af-f2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="cr03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-f2-cr05" edge="1" parent="1" source="af-f2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="cr05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-f3-cr06" edge="1" parent="1" source="af-f3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;" target="cr06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr01-login" edge="1" parent="1" source="cr01" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-web-login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr09-history" edge="1" parent="1" source="cr09" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-web-history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr09-check" edge="1" parent="1" source="cr09" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-hist-check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr03-track" edge="1" parent="1" source="cr03" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-web-track">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr03-andtrack" edge="1" parent="1" source="cr03" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-track">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr05-nav" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-nav">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr05-api" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr06-create" edge="1" parent="1" source="cr06" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-web-create">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr06-andcreate" edge="1" parent="1" source="cr06" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-create">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr06-zip" edge="1" parent="1" source="cr06" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-zip">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-web-login-users" edge="1" parent="1" source="af-web-login" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="af-users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-web-track-ship" edge="1" parent="1" source="af-web-track" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="af-ship">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-web-create-ship" edge="1" parent="1" source="af-web-create" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="af-ship">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-web-history-ship" edge="1" parent="1" source="af-web-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="af-ship">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-api-users" edge="1" parent="1" source="af-and-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="af-users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-api-ship" edge="1" parent="1" source="af-and-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="af-ship">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-users-db" edge="1" parent="1" source="af-users" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="af-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-ship-db" edge="1" parent="1" source="af-ship" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="af-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-db-schema" edge="1" parent="1" source="af-db" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="af-schema">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr07-tests" edge="1" parent="1" source="cr07" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr08-ci" edge="1" parent="1" source="cr08" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-ci">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="afe-cr08-sonar" edge="1" parent="1" source="cr08" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-sonar">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1870" y="743" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="explicit-cr05-session" value="CR-05 includes SessionManager.kt" edge="1" parent="1" source="cr05" target="af-and-session" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="explicit-cr05-history" value="CR-05 includes HistoryScreen.kt" edge="1" parent="1" source="cr05" target="af-and-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="explicit-session-nav" value="SessionManager -> navigation" edge="1" parent="1" source="af-and-session" target="af-and-nav" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="explicit-nav-history" value="AppNavigation -> HistoryScreen" edge="1" parent="1" source="af-and-nav" target="af-and-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="explicit-history-api" value="HistoryScreen -> ApiService" edge="1" parent="1" source="af-and-history" target="af-and-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="explicit-history-ship" value="History API -> shipments route" edge="1" parent="1" source="af-and-history" target="af-ship" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+
+        <mxCell id="afe-cr01-users" edge="1" parent="1" source="cr01" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-users"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr02-users" edge="1" parent="1" source="cr02" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-users"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr02-ship" edge="1" parent="1" source="cr02" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr02-notact" edge="1" parent="1" source="cr02" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr02-db" edge="1" parent="1" source="cr02" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr02-schema" edge="1" parent="1" source="cr02" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-schema"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr03-ship" edge="1" parent="1" source="cr03" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr03-api" edge="1" parent="1" source="cr03" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr03-db" edge="1" parent="1" source="cr03" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr03-schema" edge="1" parent="1" source="cr03" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-schema"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr04-login" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-web-login"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr04-track" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-web-track"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr04-create" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-web-create"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr04-history" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-web-history"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr04-api" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr04-server" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-server"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr05-track" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-track"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr05-create" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-create"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr05-history" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-history"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr05-session" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-and-session"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr07-server" edge="1" parent="1" source="cr07" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-server"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr07-users" edge="1" parent="1" source="cr07" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-users"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr07-ship" edge="1" parent="1" source="cr07" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr07-notact" edge="1" parent="1" source="cr07" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr08-tests" edge="1" parent="1" source="cr08" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-tests"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr09-ship" edge="1" parent="1" source="cr09" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-session-nav" edge="1" parent="1" source="af-and-session" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-and-nav"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-nav-track" edge="1" parent="1" source="af-and-nav" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-and-track"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-nav-create" edge="1" parent="1" source="af-and-nav" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-and-create"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-nav-history" edge="1" parent="1" source="af-and-nav" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-and-history"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-andtrack-api" edge="1" parent="1" source="af-and-track" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-and-api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-andcreate-api" edge="1" parent="1" source="af-and-create" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-and-api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-andcreate-zip" edge="1" parent="1" source="af-and-create" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-and-zip"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-andhistory-api" edge="1" parent="1" source="af-and-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-and-api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-server-users" edge="1" parent="1" source="af-server" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" target="af-users"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-server-ship" edge="1" parent="1" source="af-server" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-server-notact" edge="1" parent="1" source="af-server" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-notact-db" edge="1" parent="1" source="af-not-act" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-tests-server" edge="1" parent="1" source="af-tests" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-server"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-tests-users" edge="1" parent="1" source="af-tests" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-users"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-tests-ship" edge="1" parent="1" source="af-tests" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-tests-notact" edge="1" parent="1" source="af-tests" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-ci-tests" edge="1" parent="1" source="af-ci" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-tests"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-sonar-tests" edge="1" parent="1" source="af-sonar" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-tests"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="afe-cr04-db" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr05-users" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-users"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr05-ship" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr06-ship" edge="1" parent="1" source="cr06" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr06-db" edge="1" parent="1" source="cr06" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr07-db" edge="1" parent="1" source="cr07" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr07-schema" edge="1" parent="1" source="cr07" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-schema"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr08-server" edge="1" parent="1" source="cr08" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-server"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr08-users" edge="1" parent="1" source="cr08" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-users"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr08-ship" edge="1" parent="1" source="cr08" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr08-notact" edge="1" parent="1" source="cr08" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr08-db" edge="1" parent="1" source="cr08" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-history-check-web-history" edge="1" parent="1" source="af-hist-check" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-web-history"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-history-check-ship" edge="1" parent="1" source="af-hist-check" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-tests-db" edge="1" parent="1" source="af-tests" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-tests-schema" edge="1" parent="1" source="af-tests" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-schema"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-api-db" edge="1" parent="1" source="af-and-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-web-login-db" edge="1" parent="1" source="af-web-login" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-web-track-db" edge="1" parent="1" source="af-web-track" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-web-create-db" edge="1" parent="1" source="af-web-create" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-web-history-db" edge="1" parent="1" source="af-web-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr02-server" edge="1" parent="1" source="cr02" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-server"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr03-server" edge="1" parent="1" source="cr03" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-server"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr04-users" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-users"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr04-ship" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-ship"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr04-notact" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr05-server" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-server"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr05-notact" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-cr05-db" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=2;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-server-db" edge="1" parent="1" source="af-server" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-ci-server" edge="1" parent="1" source="af-ci" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-server"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-sonar-server" edge="1" parent="1" source="af-sonar" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-server"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-ci-notact" edge="1" parent="1" source="af-ci" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="afe-sonar-notact" edge="1" parent="1" source="af-sonar" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;dashed=1;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="visible-cr02-server" edge="1" parent="1" source="cr02" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ff0000;strokeWidth=4;" target="af-server"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="visible-cr04-notact" edge="1" parent="1" source="cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ff0000;strokeWidth=4;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="visible-cr05-notact" edge="1" parent="1" source="cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ff0000;strokeWidth=4;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="visible-server-notact" edge="1" parent="1" source="af-server" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ff0000;strokeWidth=4;" target="af-not-act"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="visible-server-db" edge="1" parent="1" source="af-server" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ff0000;strokeWidth=4;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="visible-notact-db" edge="1" parent="1" source="af-not-act" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ff0000;strokeWidth=4;" target="af-db"><mxGeometry relative="1" as="geometry"/></mxCell>
+  </diagram>
+  <diagram id="slo-graph" name="Directed SLO Graph">
+    <mxGraphModel dx="1868" dy="2484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="slo-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1" value="D4 Directed SLO Graph" vertex="1">
+          <mxGeometry height="40" width="500" x="110" y="-730" as="geometry" />
+        </mxCell>
+        <mxCell id="slo-legend" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=14" value="Green arrows = client/API/module dependency; Purple = backend/database dependency; Red = test/CI dependency" vertex="1">
+          <mxGeometry height="30" width="760" x="30" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S1 Web LoginPage.jsx" vertex="1">
+          <mxGeometry height="45" width="220" x="60" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S2 Web TrackingPage.jsx" vertex="1">
+          <mxGeometry height="45" width="220" x="60" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S3 Web CreateShipmentPage.jsx" vertex="1">
+          <mxGeometry height="45" width="220" x="50" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S4 Web HistoryPage.jsx" vertex="1">
+          <mxGeometry height="45" width="220" x="60" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S5 Android AppNavigation.kt" vertex="1">
+          <mxGeometry height="45" width="240" x="1030" y="-622" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S6 Android TrackingScreen.kt" vertex="1">
+          <mxGeometry height="45" width="240" x="600" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="s7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S7 Android CreateShipmentScreen.kt" vertex="1">
+          <mxGeometry height="45" width="240" x="140" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="s8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S8 Android HistoryScreen.kt" vertex="1">
+          <mxGeometry height="45" width="240" x="280" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="s9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S9 Android SessionManager.kt" vertex="1">
+          <mxGeometry height="45" width="240" x="250" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="s10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S10 Android ThaiPostalCodes.kt" vertex="1">
+          <mxGeometry height="45" width="240" x="400" y="-240" as="geometry" />
+        </mxCell>
+        <mxCell id="s11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" value="S11 Android ApiService / RetrofitClient" vertex="1">
+          <mxGeometry height="55" width="250" x="650" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="s12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="S12 Backend server.js" vertex="1">
+          <mxGeometry height="45" width="230" x="1570" y="-230" as="geometry" />
+        </mxCell>
+        <mxCell id="s13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="S13 routes/users.js" vertex="1">
+          <mxGeometry height="45" width="230" x="2120" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="s14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="S14 routes/shipments.js" vertex="1">
+          <mxGeometry height="45" width="230" x="840" y="-100" as="geometry" />
+        </mxCell>
+        <mxCell id="s15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="S15 notifications.js / activity.js" vertex="1">
+          <mxGeometry height="45" width="230" x="1630" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="s16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="S16 db.js" vertex="1">
+          <mxGeometry height="45" width="170" x="2610" y="-70" as="geometry" />
+        </mxCell>
+        <mxCell id="s17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" value="S17 setup.sql" vertex="1">
+          <mxGeometry height="45" width="170" x="1340" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="s18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="S18 Backend Jest / Supertest tests" vertex="1">
+          <mxGeometry height="50" width="230" x="1800" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="s19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" value="S19 CI and SonarCloud configuration" vertex="1">
+          <mxGeometry height="50" width="230" x="360" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="se1" edge="1" parent="1" source="s1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1350" y="103" />
+              <mxPoint x="1350" y="673" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se2" edge="1" parent="1" source="s2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se3" edge="1" parent="1" source="s3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1230" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se4" edge="1" parent="1" source="s4" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="863" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se5" edge="1" parent="1" source="s5" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="-230" />
+              <mxPoint x="660" y="-230" />
+              <mxPoint x="660" y="163" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se6" edge="1" parent="1" source="s5" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se7" edge="1" parent="1" source="s5" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1210" y="-160" />
+              <mxPoint x="480" y="-160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se8" edge="1" parent="1" source="s9" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1280" y="543" />
+              <mxPoint x="1280" y="-317" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se9" edge="1" parent="1" source="s6" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="825" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se10" edge="1" parent="1" source="s7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se11" edge="1" parent="1" source="s7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="293" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se12" edge="1" parent="1" source="s8" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="710" y="483" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se13" edge="1" parent="1" source="s11" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="765" y="310" />
+              <mxPoint x="1155" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se14" edge="1" parent="1" source="s11" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;" target="s14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="70" />
+              <mxPoint x="910" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se15" edge="1" parent="1" source="s12" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="s13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se16" edge="1" parent="1" source="s12" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="s14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se17" edge="1" parent="1" source="s12" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="s15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se18" edge="1" parent="1" source="s13" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="s16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se19" edge="1" parent="1" source="s14" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="s16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="233" />
+              <mxPoint x="2650" y="233" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se20" edge="1" parent="1" source="s15" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="s16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1820" y="298" />
+              <mxPoint x="2360" y="298" />
+              <mxPoint x="2360" y="30" />
+              <mxPoint x="2750" y="30" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se21" edge="1" parent="1" source="s16" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;" target="s17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se22" edge="1" parent="1" source="s18" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="s12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1915" y="1205" />
+              <mxPoint x="2040" y="1205" />
+              <mxPoint x="2040" y="268" />
+              <mxPoint x="1915" y="268" />
+              <mxPoint x="1915" y="-97" />
+              <mxPoint x="1700" y="-97" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se23" edge="1" parent="1" source="s18" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="s13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se24" edge="1" parent="1" source="s18" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="s14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1870" y="1205" />
+              <mxPoint x="1320" y="1205" />
+              <mxPoint x="1320" y="-130" />
+              <mxPoint x="1020" y="-130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se25" edge="1" parent="1" source="s18" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="s15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1915" y="635" />
+              <mxPoint x="1780" y="635" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se26" edge="1" parent="1" source="s19" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=2;" target="s18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1840" y="995" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="color-filtered-impact" name="Color-Filtered Impact View">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cf-title" value="D4 Color-Filtered Impact View" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="520" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-legend" value="CR colors: Red = Corrective, Orange = Adaptive, Green = Perfective, Purple = Preventive. Code colors: Blue = Web, Green = Android, Violet = Backend, Pink = Test/Quality." style="text;html=1;strokeColor=none;fillColor=none;fontSize=14" vertex="1" parent="1">
+          <mxGeometry x="40" y="65" width="1200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-f1" value="F1 Android Mobile Client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1f78d1;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="130" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-f2" value="F2 Parcel Status Tracking" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1f78d1;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="210" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-f3" value="F3 Address Auto-fill and Validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1f78d1;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="290" width="220" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-corrective-label" value="Corrective" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#c62828" vertex="1" parent="1">
+          <mxGeometry x="340" y="105" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-cr01" value="CR-01 Web Login Auth Fix" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#c62828;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="140" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-cr09" value="CR-09 History Data Leak Fix" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#c62828;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="198" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-adaptive-label" value="Adaptive" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="340" y="270" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-cr02" value="CR-02 PostgreSQL Route Fixes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d79b00;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="305" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-cr03" value="CR-03 Tracking With Cloud DB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d79b00;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="363" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-cr04" value="CR-04 Render Deployment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d79b00;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="421" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-perfective-label" value="Perfective" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#2e7d32" vertex="1" parent="1">
+          <mxGeometry x="340" y="495" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-cr05" value="CR-05 Native Android Client" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#2e7d32;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="530" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-cr06" value="CR-06 Postal Code Auto-fill" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#2e7d32;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="588" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-preventive-label" value="Preventive" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#7b1fa2" vertex="1" parent="1">
+          <mxGeometry x="340" y="660" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-cr07" value="CR-07 Backend Tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#7b1fa2;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="695" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-cr08" value="CR-08 CI and SonarCloud" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#7b1fa2;strokeWidth=2;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="753" width="230" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-web-label" value="Web Modules" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#1f78d1" vertex="1" parent="1">
+          <mxGeometry x="680" y="105" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-web-login" value="Web LoginPage.jsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1f78d1;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="140" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-web-track" value="Web TrackingPage.jsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1f78d1;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="192" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-web-create" value="Web CreateShipmentPage.jsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1f78d1;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="244" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-web-history" value="Web HistoryPage.jsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1f78d1;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="296" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-android-label" value="Android Modules" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#2e7d32" vertex="1" parent="1">
+          <mxGeometry x="680" y="370" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-and-nav" value="Android AppNavigation.kt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#2e7d32;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="405" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-and-track" value="Android TrackingScreen.kt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#2e7d32;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="457" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-and-create" value="Android CreateShipmentScreen.kt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#2e7d32;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="509" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-and-history" value="Android HistoryScreen.kt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#0288d1;strokeWidth=4;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="680" y="561" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-and-session" value="Android SessionManager.kt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#0288d1;strokeWidth=4;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="680" y="613" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-and-zip" value="Android ThaiPostalCodes.kt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#2e7d32;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="665" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-and-api" value="Android ApiService / RetrofitClient" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#2e7d32;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="680" y="717" width="230" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-back-label" value="Backend Modules" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#7b1fa2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="105" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-server" value="Backend server.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#7b1fa2;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="140" width="240" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-users" value="Backend routes/users.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#7b1fa2;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="192" width="240" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-shipments" value="Backend routes/shipments.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#7b1fa2;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="244" width="240" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-not-act" value="Backend notifications.js / activity.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#7b1fa2;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="296" width="240" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-db" value="Backend db.js" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#7b1fa2;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="348" width="240" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-schema" value="PostgreSQL setup.sql" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#7b1fa2;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="400" width="240" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-test-label" value="Tests / Quality" style="text;html=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;fontColor=#ad1457" vertex="1" parent="1">
+          <mxGeometry x="1030" y="485" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-tests" value="Backend Jest / Supertest tests" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#ad1457;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="520" width="240" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-ci" value="GitHub Actions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#ad1457;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="572" width="240" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-sonar" value="SonarCloud" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#ad1457;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="624" width="240" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-history-check" value="Two-account history isolation check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8bbd0;strokeColor=#ad1457;strokeWidth=2" vertex="1" parent="1">
+          <mxGeometry x="1030" y="676" width="240" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-f1-cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-f1" target="cf-cr05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-f1-cr04" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-f1" target="cf-cr04">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-f2-cr03" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-f2" target="cf-cr03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-f2-cr05" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-f2" target="cf-cr05">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-f3-cr06" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-f3" target="cf-cr06">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr01-login" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=3;" edge="1" parent="1" source="cf-cr01" target="cf-web-login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr01-users" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=3;" edge="1" parent="1" source="cf-cr01" target="cf-users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr09-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=3;" edge="1" parent="1" source="cf-cr09" target="cf-web-history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr09-ship" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=3;" edge="1" parent="1" source="cf-cr09" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr09-check" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#c62828;strokeWidth=3;" edge="1" parent="1" source="cf-cr09" target="cf-history-check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr02-back" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr02" target="cf-users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr02-ship" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr02" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr02-notact" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr02" target="cf-not-act">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr03-track" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr03" target="cf-web-track">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr03-andtrack" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr03" target="cf-and-track">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr03-ship" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr03" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr04-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr04" target="cf-and-api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr04-web" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr04" target="cf-web-login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr04-server" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr04" target="cf-server">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr05-nav" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr05" target="cf-and-nav">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr05-screens" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr05" target="cf-and-track">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr05-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr05" target="cf-and-api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr06-webcreate" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr06" target="cf-web-create">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr06-andcreate" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr06" target="cf-and-create">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr06-zip" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr06" target="cf-and-zip">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr07-tests" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=3;" edge="1" parent="1" source="cf-cr07" target="cf-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr08-ci" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=3;" edge="1" parent="1" source="cf-cr08" target="cf-ci">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr08-sonar" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=3;" edge="1" parent="1" source="cf-cr08" target="cf-sonar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr02-db" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr02" target="cf-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr02-schema" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr02" target="cf-schema">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr03-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr03" target="cf-and-api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr03-db" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr03" target="cf-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr03-schema" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr03" target="cf-schema">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr04-track" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr04" target="cf-web-track">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr04-create" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr04" target="cf-web-create">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr04-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr04" target="cf-web-history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr04-db" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#d79b00;strokeWidth=3;" edge="1" parent="1" source="cf-cr04" target="cf-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr05-create" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr05" target="cf-and-create">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr05-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr05" target="cf-and-history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr05-session" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr05" target="cf-and-session">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr05-users" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr05" target="cf-users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr05-shipments" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr05" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr06-shipments" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=3;" edge="1" parent="1" source="cf-cr06" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr07-server" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=3;" edge="1" parent="1" source="cf-cr07" target="cf-server">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr07-users" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=3;" edge="1" parent="1" source="cf-cr07" target="cf-users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr07-shipments" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=3;" edge="1" parent="1" source="cf-cr07" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr07-notact" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=3;" edge="1" parent="1" source="cf-cr07" target="cf-not-act">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr07-db" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=3;" edge="1" parent="1" source="cf-cr07" target="cf-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr08-tests" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=3;" edge="1" parent="1" source="cf-cr08" target="cf-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-cr08-server" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=3;" edge="1" parent="1" source="cf-cr08" target="cf-server">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-web-login-users" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-web-login" target="cf-users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-web-track-shipments" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-web-track" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-web-create-shipments" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-web-create" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-web-history-shipments" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#1f78d1;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-web-history" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-session-nav" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-and-session" target="cf-and-nav">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-nav-track" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-and-nav" target="cf-and-track">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-nav-create" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-and-nav" target="cf-and-create">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-nav-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-and-nav" target="cf-and-history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-and-track-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-and-track" target="cf-and-api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-and-create-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-and-create" target="cf-and-api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-and-create-zip" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-and-create" target="cf-and-zip">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-and-history-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-and-history" target="cf-and-api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-api-users" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-and-api" target="cf-users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-api-shipments" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#2e7d32;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-and-api" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-server-users" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-server" target="cf-users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-server-shipments" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-server" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-server-notact" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-server" target="cf-not-act">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-users-db" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-users" target="cf-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-shipments-db" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-shipments" target="cf-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-notact-db" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-not-act" target="cf-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-db-schema" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#7b1fa2;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-db" target="cf-schema">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-tests-server" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ad1457;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-tests" target="cf-server">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-tests-users" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ad1457;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-tests" target="cf-users">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-tests-shipments" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ad1457;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-tests" target="cf-shipments">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-tests-notact" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ad1457;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-tests" target="cf-not-act">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-ci-tests" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ad1457;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-ci" target="cf-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-sonar-tests" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ad1457;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-sonar" target="cf-tests">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cfe-history-check-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#ad1457;strokeWidth=2;dashed=1;" edge="1" parent="1" source="cf-history-check" target="cf-web-history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cf-explicit-cr05-session" value="CR-05 includes SessionManager" edge="1" parent="1" source="cf-cr05" target="cf-and-session" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="cf-explicit-cr05-history" value="CR-05 includes HistoryScreen" edge="1" parent="1" source="cf-cr05" target="cf-and-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="cf-explicit-session-nav" value="session -> navigation" edge="1" parent="1" source="cf-and-session" target="cf-and-nav" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="cf-explicit-nav-history" value="navigation -> history" edge="1" parent="1" source="cf-and-nav" target="cf-and-history" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="cf-explicit-history-api" value="history -> API" edge="1" parent="1" source="cf-and-history" target="cf-and-api" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;strokeColor=#0288d1;strokeWidth=5;fontColor=#0288d1;fontStyle=1;labelBackgroundColor=#ffffff;"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

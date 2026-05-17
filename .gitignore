@@ -1,0 +1,54 @@
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+*.iml
+
+# draw.io backup
+*.bkp
+
+# === Node / web ===
+node_modules/
+.npm/
+.next/
+dist/
+build/
+.nyc_output/
+coverage/
+*.log
+
+# Env files
+.env
+.env.local
+.env.*.local
+local.properties
+
+# === Android / Gradle ===
+.gradle/
+**/build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aar
+*.ap_
+*.aab
+*.dex
+*.class
+local.properties
+
+# Generated keystore / signing
+*.jks
+*.keystore
+keystore.properties
+
+# Logs / temp
+*.log
+*.tmp
+~$*

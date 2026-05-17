@@ -1,0 +1,76 @@
+<mxfile host="Electron" agent="Claude">
+  <diagram name="Container Diagram" id="container-diagram">
+    <mxGraphModel dx="1885" dy="1216" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=22;fontStyle=1;fontColor=#3399FF;" value="C4 Container Diagram" vertex="1">
+          <mxGeometry height="30" width="440" x="280" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;fontColor=#555555;" value="Post Office Online Shipping System — Phase 2 (Emerald)" vertex="1">
+          <mxGeometry height="22" width="540" x="230" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="customer" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#08427b;strokeColor=#052a4f;fontColor=#ffffff;fontSize=13;align=center;verticalAlign=middle;" value="&lt;b&gt;Customer&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#cfe1f5&quot;&gt;[Person]&lt;/span&gt;&lt;br&gt;&lt;br&gt;User who sends&lt;br&gt;and tracks parcels" vertex="1">
+          <mxGeometry height="130" width="140" x="430" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="web" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#1168bd;strokeColor=#0a4680;fontColor=#ffffff;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;Web Application&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#cfe1f5&quot;&gt;[Container: React 19 + TailwindCSS]&lt;/span&gt;&lt;br&gt;&lt;br&gt;Browser-based UI for customers to login,&lt;br&gt;create shipments, pay, track parcels, view history&lt;br&gt;&lt;br&gt;&lt;i style=&quot;color:#b8d4ef&quot;&gt;(Runs in user&#39;s Browser)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="140" width="340" x="80" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="mobile" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#1168bd;strokeColor=#0a4680;fontColor=#ffffff;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;Mobile Application&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#cfe1f5&quot;&gt;[Container: Kotlin + Jetpack Compose]&lt;/span&gt;&lt;br&gt;&lt;br&gt;Native Android app with the same features as&lt;br&gt;the web app, plus zip-code auto-fill&lt;br&gt;&lt;br&gt;&lt;i style=&quot;color:#b8d4ef&quot;&gt;(Runs on Android device)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="140" width="340" x="580" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="backend" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#2d8659;strokeColor=#1d5e3d;fontColor=#ffffff;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;Backend API&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#d2ecdd&quot;&gt;[Container: Node.js + Express.js]&lt;/span&gt;&lt;br&gt;&lt;br&gt;Single shared REST API used by both web and mobile.&lt;br&gt;Handles authentication, shipments, tracking,&lt;br&gt;payments, notifications, activity log&lt;br&gt;&lt;br&gt;&lt;i style=&quot;color:#c0dcce&quot;&gt;(Deployed on Render Cloud — Free Tier)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="160" width="480" x="260" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="database" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#438dd5;strokeColor=#1e5e99;fontColor=#ffffff;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;PostgreSQL Database&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#d4e7f8&quot;&gt;[Container: PostgreSQL 18]&lt;/span&gt;&lt;br&gt;&lt;br&gt;Stores users, shipments, payments,&lt;br&gt;notifications, activity log (5 tables)&lt;br&gt;&lt;br&gt;&lt;i style=&quot;color:#bcd8ef&quot;&gt;(Deployed on Render Cloud)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="170" width="350" x="325" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_cust_web" edge="1" parent="1" source="customer" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=2;fontSize=11;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="web" value="Uses web app&lt;br&gt;&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;[HTTPS]&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_cust_mob" edge="1" parent="1" source="customer" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=2;fontSize=11;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="mobile" value="Uses mobile app&lt;br&gt;&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;[HTTPS]&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_web_be" edge="1" parent="1" source="web" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=2;fontSize=11;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="backend" value="Makes API calls to&lt;br&gt;&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;[JSON/HTTPS: /api/*]&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_mob_be" edge="1" parent="1" source="mobile" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=2;fontSize=11;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="backend" value="Makes API calls to&lt;br&gt;&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;[JSON/HTTPS: /api/*]&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_be_db" edge="1" parent="1" source="backend" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=2;fontSize=11;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="database" value="Reads / Writes&lt;br&gt;&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;[SQL via pg driver]&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_bg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8f9fb;strokeColor=#c0c0c8;arcSize=8;" value="" vertex="1">
+          <mxGeometry height="30" width="940" x="30" y="965" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_label" parent="1" style="text;html=1;align=left;fontSize=11;fontColor=#1a1a2e;" value="&lt;b&gt;Legend:&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="60" x="45" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_person" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#08427b;strokeColor=#052a4f;" value="" vertex="1">
+          <mxGeometry height="16" width="18" x="105" y="972" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_person_text" parent="1" style="text;html=1;align=left;fontSize=11;fontColor=#1a1a2e;" value="Person" vertex="1">
+          <mxGeometry height="20" width="60" x="127" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_client" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1168bd;strokeColor=#0a4680;" value="" vertex="1">
+          <mxGeometry height="16" width="18" x="185" y="972" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_client_text" parent="1" style="text;html=1;align=left;fontSize=11;fontColor=#1a1a2e;" value="Client Container (Web / Mobile)" vertex="1">
+          <mxGeometry height="20" width="200" x="207" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_backend" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2d8659;strokeColor=#1d5e3d;" value="" vertex="1">
+          <mxGeometry height="16" width="18" x="405" y="972" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_backend_text" parent="1" style="text;html=1;align=left;fontSize=11;fontColor=#1a1a2e;" value="Backend Container" vertex="1">
+          <mxGeometry height="20" width="130" x="427" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#438dd5;strokeColor=#1e5e99;" value="" vertex="1">
+          <mxGeometry height="16" width="18" x="560" y="972" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_db_text" parent="1" style="text;html=1;align=left;fontSize=11;fontColor=#1a1a2e;" value="Database Container" vertex="1">
+          <mxGeometry height="20" width="130" x="582" y="970" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

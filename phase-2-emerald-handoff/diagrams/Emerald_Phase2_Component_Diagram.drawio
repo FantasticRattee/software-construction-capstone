@@ -1,0 +1,85 @@
+<mxfile host="Electron" agent="Claude">
+  <diagram name="Component Diagram" id="component-diagram">
+    <mxGraphModel dx="1664" dy="1073" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=22;fontStyle=1;fontColor=#3399FF;" value="C4 Component Diagram — Backend API" vertex="1">
+          <mxGeometry height="30" width="480" x="360" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;fontColor=#555555;" value="Internals of the Backend API container (Node.js + Express.js on Render)" vertex="1">
+          <mxGeometry height="22" width="600" x="300" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="web" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#1168bd;strokeColor=#0a4680;fontColor=#ffffff;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;Web Application&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#cfe1f5&quot;&gt;[Container: React]&lt;/span&gt;&lt;br&gt;&lt;br&gt;Browser-based client&lt;br&gt;&lt;i style=&quot;color:#b8d4ef;font-size:10px&quot;&gt;(from container diagram)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="100" width="280" x="100" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="mobile" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#1168bd;strokeColor=#0a4680;fontColor=#ffffff;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;Mobile Application&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#cfe1f5&quot;&gt;[Container: Kotlin]&lt;/span&gt;&lt;br&gt;&lt;br&gt;Native Android client&lt;br&gt;&lt;i style=&quot;color:#b8d4ef;font-size:10px&quot;&gt;(from container diagram)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="100" width="280" x="820" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="backend_boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f7fbf9;strokeColor=#2d8659;strokeWidth=2;dashed=1;dashPattern=8 5;arcSize=6;verticalAlign=top;align=left;fontSize=13;fontStyle=1;fontColor=#1d5e3d;spacingLeft=15;spacingTop=10;" value="Backend API [Container: Node.js + Express.js — deployed on Render]" vertex="1">
+          <mxGeometry height="640" width="1080" x="60" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="server" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#55aa85;strokeColor=#1d5e3d;fontColor=#ffffff;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;Express Server (server.js)&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#e3f3ea&quot;&gt;[Component: Express 5]&lt;/span&gt;&lt;br&gt;&lt;br&gt;App entry point. Registers CORS,&lt;br&gt;JSON middleware, mounts route modules.&lt;br&gt;Auto-creates tables on boot." vertex="1">
+          <mxGeometry height="120" width="340" x="430" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="users" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#55aa85;strokeColor=#1d5e3d;fontColor=#ffffff;fontSize=11;align=center;verticalAlign=middle;" value="&lt;b&gt;Users Router&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#e3f3ea&quot;&gt;[Component: routes/users.js]&lt;/span&gt;&lt;br&gt;&lt;br&gt;POST /register&lt;br&gt;POST /login&lt;br&gt;GET /profile/:id&lt;br&gt;GET /stats/:id" vertex="1">
+          <mxGeometry height="150" width="230" x="90" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="shipments" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#55aa85;strokeColor=#1d5e3d;fontColor=#ffffff;fontSize=11;align=center;verticalAlign=middle;" value="&lt;b&gt;Shipments Router&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#e3f3ea&quot;&gt;[Component: routes/shipments.js]&lt;/span&gt;&lt;br&gt;&lt;br&gt;POST / (create + txn)&lt;br&gt;GET /track/:id, /recent&lt;br&gt;GET /history/:userId&lt;br&gt;GET /monthly/:userId" vertex="1">
+          <mxGeometry height="150" width="230" x="350" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="notifications" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#55aa85;strokeColor=#1d5e3d;fontColor=#ffffff;fontSize=11;align=center;verticalAlign=middle;" value="&lt;b&gt;Notifications Router&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#e3f3ea&quot;&gt;[Component: routes/notifications.js]&lt;/span&gt;&lt;br&gt;&lt;br&gt;GET /:userId&lt;br&gt;(list notifications)&lt;br&gt;&lt;br&gt;PATCH /:userId/read-all" vertex="1">
+          <mxGeometry height="150" width="230" x="610" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="activity" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#55aa85;strokeColor=#1d5e3d;fontColor=#ffffff;fontSize=11;align=center;verticalAlign=middle;" value="&lt;b&gt;Activity Router&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#e3f3ea&quot;&gt;[Component: routes/activity.js]&lt;/span&gt;&lt;br&gt;&lt;br&gt;GET /:userId&lt;br&gt;(user activity log,&lt;br&gt;last 10 entries)" vertex="1">
+          <mxGeometry height="150" width="230" x="870" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="bcrypt" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#a6d3bd;strokeColor=#1d5e3d;strokeWidth=2;dashed=1;dashPattern=4 3;fontColor=#1a1a2e;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;bcrypt&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#2d5d3f&quot;&gt;[Library: npm package]&lt;/span&gt;&lt;br&gt;&lt;br&gt;Password hashing&lt;br&gt;and verification&lt;br&gt;&lt;i style=&quot;color:#2d5d3f;font-size:10px&quot;&gt;Used by Users Router&lt;/i&gt;" vertex="1">
+          <mxGeometry height="130" width="220" x="150" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="dbjs" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#55aa85;strokeColor=#1d5e3d;fontColor=#ffffff;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;DB Pool (db.js)&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#e3f3ea&quot;&gt;[Component: pg.Pool]&lt;/span&gt;&lt;br&gt;&lt;br&gt;Wraps node-postgres&lt;br&gt;connection pool with SSL&lt;br&gt;&lt;i style=&quot;color:#d2ecdd;font-size:10px&quot;&gt;Shared by all routers&lt;/i&gt;" vertex="1">
+          <mxGeometry height="130" width="220" x="830" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="database" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#438dd5;strokeColor=#1e5e99;fontColor=#ffffff;fontSize=12;align=center;verticalAlign=middle;" value="&lt;b&gt;PostgreSQL Database&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#d4e7f8&quot;&gt;[Container: PostgreSQL 18 on Render]&lt;/span&gt;&lt;br&gt;&lt;br&gt;5 tables: users, shipments, payments,&lt;br&gt;notifications, activity_log" vertex="1">
+          <mxGeometry height="140" width="320" x="440" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_web_server" edge="1" parent="1" source="web" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=2;fontSize=11;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="server" value="API calls&lt;br&gt;&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;[JSON/HTTPS]&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_mob_server" edge="1" parent="1" source="mobile" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=2;fontSize=11;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="server" value="API calls&lt;br&gt;&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;[JSON/HTTPS]&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_server_users" edge="1" parent="1" source="server" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=1.5;fontSize=10;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="users" value="&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;/api/users/*&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_server_ship" edge="1" parent="1" source="server" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=1.5;fontSize=10;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="shipments" value="&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;/api/shipments/*&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_server_notif" edge="1" parent="1" source="server" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=1.5;fontSize=10;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="notifications" value="&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;/api/notifications/*&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_server_act" edge="1" parent="1" source="server" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=1.5;fontSize=10;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="activity" value="&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;/api/activity/*&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_users_bcrypt" edge="1" parent="1" source="users" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=1.5;fontSize=11;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="bcrypt" value="Hash / verify password&lt;br&gt;&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;[function call]&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_users_db" edge="1" parent="1" source="users" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=1.5;" target="dbjs" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_ship_db" edge="1" parent="1" source="shipments" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=1.5;fontSize=11;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="dbjs" value="Query / insert / update&lt;br&gt;&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;[pool.query / pool.connect]&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_notif_db" edge="1" parent="1" source="notifications" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=1.5;" target="dbjs" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_act_db" edge="1" parent="1" source="activity" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=1.5;" target="dbjs" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_db_pg" edge="1" parent="1" source="dbjs" style="endArrow=classic;html=1;rounded=0;strokeColor=#3a3a3a;strokeWidth=2;fontSize=11;fontColor=#1a1a2e;labelBackgroundColor=#ffffff;" target="database" value="Executes SQL&lt;br&gt;&lt;i style=&quot;color:#666;font-size:10px&quot;&gt;[TCP/SSL via pg driver]&lt;/i&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
