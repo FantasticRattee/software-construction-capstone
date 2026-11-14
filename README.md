@@ -1,14 +1,16 @@
 # Software Construction — Phase 1 (Build) + Phase 2 (Handoff)
 
-The full greenfield → maintenance cycle, built across two semester phases of **ITCS383 (Software Construction)** at the Faculty of ICT, Mahidol University.
+The full greenfield → maintenance cycle, built across the two phases of one course, **ITCS383 (Software Construction)**, at the Faculty of ICT, Mahidol University (Jan – May 2026).
+
+> **Names used here.** **Emerald** is my team's name, and also the name of the Android app we built in Phase 2. **SpaceHub** is the project we built in Phase 1. **Arai-Kor-Dai** is the *other* team's name; we inherited their post-office shipping system in Phase 2.
 
 ---
 
 ## The story
 
-**Phase 1 — built from scratch.** Our 6-person team (codename **Emerald**) designed and built [**SpaceHub**](phase-1-spacehub/), a co-working space management web app, intended to be handed off to *another* team in their Phase 2.
+**Phase 1 — built from scratch.** Our 6-person team (team name **Emerald**) designed and built [**SpaceHub**](phase-1-spacehub/), a co-working space management web app, intended to be handed off to *another* team in their Phase 2.
 
-**Phase 2 — inherited someone else's code.** We took over **Arai-Kor-Dai**, a post-office shipping platform built by a *different* team in their Phase 1, and continued development. Before touching the code we produced a formal [**D4 Impact Analysis**](phase-2-emerald-handoff/d4-impact-analysis/), then built [**Emerald**](phase-2-emerald-handoff/android-emerald/) — the new native Android client.
+**Phase 2 — inherited someone else's code.** We took over a post-office shipping system built by a *different* team (team **Arai-Kor-Dai**) in their Phase 1. We got it running, moved its database to the cloud, built [**Emerald**](phase-2-emerald-handoff/android-emerald/), a new native Android client, and traced every change request through the system in the [**D4 Impact Analysis**](phase-2-emerald-handoff/d4-impact-analysis/).
 
 This is the real-world software lifecycle: write clean code knowing someone else will inherit it, then inherit someone else's code and figure it out before changing it.
 
@@ -39,16 +41,16 @@ Both halves are essential. Greenfield-only engineers write brittle code no one e
 
 Inheriting someone else's code is the most underappreciated software-engineering skill. You don't get to redesign from scratch — you have to **read, understand, and respect** an existing design before you change anything.
 
-The **D4 Impact Analysis** is the formal way to do this:
+The **D4 Impact Analysis** is the formal way to show how far a change spreads. It covers the nine change requests of Phase 2:
 
-1. **Map dependencies** — what does each module depend on? What depends on it? Where would a change ripple?
-2. **Identify SLOs** — what does the existing system promise users (latency, availability, correctness)? You can't break those.
-3. **Build a reachability matrix** — which code is reachable from each user-facing feature? If you delete this function, what breaks?
-4. **Propose changes minimally** — smallest possible change that achieves the new requirement. Honor the existing API contracts.
+1. **Traceability graphs** — every requirement linked to the design node, code modules, and tests that realise it, for the whole system and for the affected part.
+2. **SLO directed graph** — the 39 affected code files grouped into 10 Software Lifecycle Objects (SLOs: logical modules that are developed, tested, and deployed as a unit), with their dependencies.
+3. **Reachability matrix** — the shortest-path distance between every pair of SLOs, which shows which modules a change can reach.
+4. **Difficulty analysis** — each change request rated easy or difficult from the modules it touches and how many others reach them.
 
-Only **after** D4 was complete were we allowed to write new code. The **Emerald Android client** was built fresh on top of the inherited Arai-Kor-Dai backend — meaning our app design had to honor the existing API contracts (we couldn't change the server's endpoints, request shapes, or response formats; we had to design the mobile UX around what the inherited API already supported).
+The result matched what we felt while doing the work: changes to leaf modules were cheap, and changes to the backend core and the database were expensive because almost everything else reaches them.
 
-This is real software engineering. In some ways the D4 deliverable is more valuable than the code itself — it's the artifact that proves we understood the system before changing it.
+The **Emerald Android client** was built fresh on top of the inherited backend. The API endpoints stayed the same for the web app and the Android app while the database underneath moved from MySQL to PostgreSQL on Render.
 
 ---
 
@@ -96,7 +98,7 @@ The native Android client I co-developed for the inherited Arai-Kor-Dai post-off
 | Target SDK | 26–36 |
 | Testing | JUnit 5 + MockK + JaCoCo coverage |
 | CI | GitHub Actions + SonarCloud |
-| Backend | (Inherited) Express + MySQL — not in this repo |
+| Backend | (Inherited) Express API, moved from MySQL to PostgreSQL on Render in Phase 2 — not in this repo |
 | Team size | 6 |
 
 → See [`phase-2-emerald-handoff/README.md`](phase-2-emerald-handoff/README.md) for the full breakdown and setup instructions.
@@ -105,17 +107,27 @@ The native Android client I co-developed for the inherited Arai-Kor-Dai post-off
 
 ## D4 Impact Analysis (the BA deliverable)
 
-Before extending the inherited Arai-Kor-Dai codebase, we produced the **D4 Impact Analysis** — a Business Analysis deliverable that identified dependencies, risks, SLOs, and proposed changes against the inherited codebase. This step is what made the handoff safe.
+The **D4 Impact Analysis** is the fourth required report of Phase 2. It traces the nine change requests through the inherited system with traceability graphs, an SLO directed graph, and a reachability matrix, then explains which changes were easy or difficult and why.
 
-→ Read it in [`phase-2-emerald-handoff/d4-impact-analysis/D4_IMPACT_ANALYSIS.md`](phase-2-emerald-handoff/d4-impact-analysis/D4_IMPACT_ANALYSIS.md). The connected reachability graph lives alongside it as a `.drawio` file.
+→ Read it in [`phase-2-emerald-handoff/d4-impact-analysis/D4_IMPACT_ANALYSIS.md`](phase-2-emerald-handoff/d4-impact-analysis/D4_IMPACT_ANALYSIS.md). The four graphs are in the `Impact Analysis imgs/` folder beside it, and their draw.io source is [`phase-2-emerald-handoff/diagrams/TraceabilityGraph-Final.drawio`](phase-2-emerald-handoff/diagrams/TraceabilityGraph-Final.drawio).
+
+---
+
+## Revised November 2026
+
+The course documents were checked against the code and corrected:
+
+- **Phase 1 design document** — the bank-transfer and CCTV integrations are marked as simulated, the encryption mode is AES-256-GCM, the web app and API are described as one Express process, and the component diagram has an errata list.
+- **Phase 2 container diagram and traceability graph** — brought in line with the delivered system.
+- **D4 Impact Analysis** — the earlier draft was replaced by the final version with its four graphs.
 
 ---
 
 ## Author
 
-**Rattee Watperatam** (Student ID: 6688141)
+**Rattee Watperatam**
 ICT, Faculty of ICT, Mahidol University
-Course: **ITCS383** — Year 3 (Aug 2025 – May 2026)
+Course: **ITCS383** — Year 3 (Jan – May 2026)
 
 [rattee.watp@gmail.com](mailto:rattee.watp@gmail.com) · [github.com/FantasticRattee](https://github.com/FantasticRattee)
 

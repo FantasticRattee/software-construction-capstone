@@ -2,18 +2,18 @@
 
 **By:** Team Emerald
 **Date:** 2026-04-28
-**Original Team:** Arai-Kor-Dai (6688046, 6688194, 6688083, 6688148, 6688205, 6688226)
+**Original Team:** Arai-Kor-Dai
 
 ### Team Emerald Members
 
-| Student ID | Name |
-|------------|------|
-| 6688139 | Naruebordint Veangnont |
-| 6688141 | Rattee Watperatam |
-| 6688155 | Nattaphong Jullayakiat |
-| 6688164 | Veerakron No-in |
-| 6688172 | Wirunya Kaewthong |
-| 6688239 | Piyada Chalermnontakarn |
+| Name |
+|------|
+| Naruebordint Veangnont |
+| Rattee Watperatam |
+| Nattaphong Jullayakiat |
+| Veerakron No-in |
+| Wirunya Kaewthong |
+| Piyada Chalermnontakarn |
 
 ---
 

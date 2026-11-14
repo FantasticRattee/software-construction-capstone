@@ -1,6 +1,6 @@
 # Phase 2 — Emerald Android + D4 Impact Analysis (Handoff project)
 
-In **Phase 2** of ITCS383, our team (codename **Emerald**) inherited **Arai-Kor-Dai**, a post-office shipping platform built by a *different* team in their own Phase 1. We had to read, analyze, and extend an unfamiliar codebase — the real-world software-maintenance cycle.
+In **Phase 2** of ITCS383, our team (team name **Emerald**) inherited a post-office shipping system built by a *different* team (team name **Arai-Kor-Dai**) in their own Phase 1. We had to read, analyze, and extend an unfamiliar codebase — the real-world software-maintenance cycle.
 
 > Period: Jan – May 2026 · My role: co-developer of the new Android client
 
@@ -11,7 +11,7 @@ In **Phase 2** of ITCS383, our team (codename **Emerald**) inherited **Arai-Kor-
 | Folder | Contents |
 |---|---|
 | [`android-emerald/`](android-emerald/) | The native Android shipping app I co-developed in Kotlin + Jetpack Compose |
-| [`d4-impact-analysis/`](d4-impact-analysis/) | The Business Analysis deliverable I produced *before* touching the inherited code |
+| [`d4-impact-analysis/`](d4-impact-analysis/) | The impact analysis (course deliverable D4): nine change requests traced through the system |
 | [`diagrams/`](diagrams/) | Component, Container, FileMap (before/after), and final Traceability Graph (draw.io) |
 | [`docs/`](docs/) | Course-issued Phase 2 descriptions + Feature Evidences document |
 
@@ -33,7 +33,7 @@ A native Android client for the Arai-Kor-Dai post-office shipping platform. Buil
 | Target SDK | 26–36 |
 | Testing | JUnit 5 + MockK + JaCoCo coverage |
 | CI | GitHub Actions + SonarCloud |
-| Backend | (Inherited) Express + MySQL — not in this repo |
+| Backend | (Inherited) Express API, moved from MySQL to PostgreSQL on Render in Phase 2 — not in this repo |
 
 ### Features
 
@@ -58,20 +58,19 @@ Or open `android-emerald/` in **Android Studio** for the full development experi
 
 ## D4 Impact Analysis (the BA deliverable)
 
-Before any code changes to the inherited Arai-Kor-Dai codebase, we produced the **D4 Impact Analysis** — a formal Business Analysis document identifying:
+The **D4 Impact Analysis** is the fourth required report of Phase 2. It shows how far each of the nine change requests spreads through the inherited system:
 
-- **Dependencies** — what each module relies on (file map, before vs after)
-- **Risks** — failure modes and blast radius if we broke the contracts
-- **SLOs** — Service Level Objectives we needed to honor on the inherited service
-- **Reachability matrix** — what code is reachable from each user-facing feature
-- **Proposed changes** — minimal, traceable extensions
+- **Traceability graphs** — requirements linked to design nodes, code modules, and tests, for the whole system and for the affected part
+- **SLO directed graph** — the 39 affected code files grouped into 10 Software Lifecycle Objects (SLOs: logical modules developed, tested, and deployed as a unit)
+- **Reachability matrix** — the shortest-path distance between every pair of SLOs
+- **Difficulty analysis** — which change requests were easy or difficult, and why
 
 Find it here:
 
-- [`d4-impact-analysis/D4_IMPACT_ANALYSIS.md`](d4-impact-analysis/D4_IMPACT_ANALYSIS.md) — the analysis itself
-- [`d4-impact-analysis/D4_IMPACT_ANALYSIS_GRAPHSupdate_connected_v2.drawio`](d4-impact-analysis/) — the connected reachability graph
+- [`d4-impact-analysis/D4_IMPACT_ANALYSIS.md`](d4-impact-analysis/D4_IMPACT_ANALYSIS.md) — the analysis itself (final version)
+- [`d4-impact-analysis/Impact Analysis imgs/`](d4-impact-analysis/) — the four graphs as images
 
-The traceability graphs went through 7 iterations during D4 work; only the final **"Done"** version is kept in [`diagrams/TraceabilityGraph-Final.drawio`](diagrams/TraceabilityGraph-Final.drawio).
+The traceability graphs went through 7 iterations during D4 work; only the final **"Done"** version is kept in [`diagrams/TraceabilityGraph-Final.drawio`](diagrams/TraceabilityGraph-Final.drawio). It is the draw.io source of all four graphs.
 
 ---
 
@@ -80,9 +79,9 @@ The traceability graphs went through 7 iterations during D4 work; only the final
 | File | What it shows |
 |---|---|
 | `Emerald_Phase2_Component_Diagram.drawio` | Components inside the Android client |
-| `Emerald_Phase2_Container_Diagram.drawio` | Android client ↔ inherited backend ↔ database |
+| `Emerald_Phase2_Container_Diagram.drawio` | C4 container diagram: web frontend and Android client → backend API → PostgreSQL database |
 | `Emerald_Phase2_FileMap_BeforeAfter.drawio` | Inherited file structure → our additions |
-| `TraceabilityGraph-Final.drawio` | Final reachability matrix for D4 |
+| `TraceabilityGraph-Final.drawio` | Source of the four D4 graphs: whole-system and affected-part traceability, SLO directed graph, reachability matrix |
 
 Open them with [draw.io](https://app.diagrams.net/) or the desktop app.
 

@@ -7,23 +7,20 @@
 
 ## 🔑 Demo Credentials
 
-| Field    | Value                  |
-|----------|------------------------|
-| Username | `SomchaiJ@gmail.com`   |
-| Password | `Pass1234`             |
+Demo credentials are not published in this repository. Register a new account in the app to try it.
 
 ---
 
 ## 👥 Team Members
 
-| Student ID | First Name      | Last Name          |
-|------------|-----------------|--------------------|
-| 6688139   | Naruebordint          | Veangnont    |
-| 6688141    | Rattee  | Watperatam             |
-| 6688155   | Nattaphong      | Jullayakiat           |
-| 6688164   | Veerakron      | No-in       |
-| 6688172    | Wirunya         | Kaewthong         |
-| 6688239   | Piyada        |  Chalermnontakarn     |
+| First Name      | Last Name          |
+|-----------------|--------------------|
+| Naruebordint          | Veangnont    |
+| Rattee  | Watperatam             |
+| Nattaphong      | Jullayakiat           |
+| Veerakron      | No-in       |
+| Wirunya         | Kaewthong         |
+| Piyada        |  Chalermnontakarn     |
 
 
 ---

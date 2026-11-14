@@ -1,421 +1,232 @@
 # D4: Impact Analysis
 
-This document analyzes the impact of the Phase 2 maintenance work for Arai-Kor-Dai's **Smart Post & Parcel Management System**. It is updated to match the revised `D3_CHANGE_REQUESTS.md` version with 9 change requests.
+This document presents the impact analysis for the Phase 2 maintenance work on Arai-Kor-Dai's **Smart Post & Parcel Management System**. The analysis follows the artifacts required by the project description: a whole-system traceability graph, an affected-part traceability graph, an SLO directed graph, a reachability matrix with shortest-path distances, and a discussion of which change requests are easy or difficult to apply.
 
-## 1. Scope of Impact Analysis
+The 9 change requests evaluated here come from `D3_CHANGE_REQUESTS.md`:
 
-### Phase 2 Features
-
-| ID | Feature | Summary |
+| CR | Title | Type |
 |---|---|---|
-| F1 | Native Android Mobile Client App | Add a native Android client that includes the user-facing functions of the original web application: login, registration, dashboard, create shipment, payment, shipping label, tracking, history, and settings. |
-| F2 | Parcel Status Tracking Page | Allow users to enter a tracking number and view the latest parcel status on both web and Android. |
-| F3 | Address Auto-fill and Validation | Auto-fill address information from Thai postal codes and validate postal-code input on both web and Android. |
+| CR-01 | Fix Web Login to Use Real Backend Authentication | Corrective |
+| CR-02 | Correct Backend Route Logic After Database Conversion | Adaptive |
+| CR-03 | Support Parcel Status Tracking With Cloud Database | Adaptive |
+| CR-04 | Adapt the System for Cloud Deployment on Render | Adaptive |
+| CR-05 | Implement Native Android Mobile Client (Feature 1) | Perfective |
+| CR-06 | Add Thai Postal Code Address Auto-Fill and Validation | Perfective |
+| CR-07 | Add Automated Backend Test Suite and Coverage | Preventive |
+| CR-08 | Add CI Pipeline and SonarCloud Quality Monitoring | Preventive |
+| CR-09 | Fix Cross-User Data Leak on the History Page | Corrective |
 
-### Change Requests Used in This Analysis
+---
 
-| CR | Change request | Maintenance type | Main affected area |
-|---|---|---|---|
-| CR-01 | Fix Web Login to Use Real Backend Authentication | Corrective | Web login, user API, session storage |
-| CR-02 | Correct Backend Route Logic After Database Conversion | Adaptive | Backend routes, PostgreSQL query syntax |
-| CR-03 | Support Parcel Status Tracking With Cloud Database | Adaptive | Shipment tracking API, database |
-| CR-04 | Adapt the System for Cloud Deployment on Render | Adaptive | Web API URL, Android API URL, backend deployment |
-| CR-05 | Implement Native Android Mobile Client (Feature 1) | Perfective | Android app screens, navigation, Retrofit API, DataStore session |
-| CR-06 | Add Thai Postal Code Address Auto-fill and Validation | Perfective | Web create-shipment form, Android create-shipment form, postal-code lookup |
-| CR-07 | Add Automated Backend Test Suite and Coverage | Preventive | Backend route tests, server testability |
-| CR-08 | Add CI Pipeline and SonarCloud Quality Monitoring | Preventive | GitHub Actions, SonarCloud configuration |
-| CR-09 | Fix Cross-User Data Leak on the History Page | Corrective | Web history page, authenticated user ID, shipment history API |
+## 4.1 Traceability Graph — Whole System
 
-## 2. Full Traceability Graph
+The whole-system traceability graph maps every Requirement of the Smart Post & Parcel Management System to the Design nodes (C4 containers and the CI/CD pipeline) that realize it, the Code modules that implement those containers, and the Tests that verify them. It covers all 23 requirements, 5 design nodes (the 4 C4 containers plus the CI/CD pipeline), 48 code modules, and 15 test modules across the Web, Backend, Database, Android, and CI/CD subsystems.
 
-The graph below shows the full traceability view from feature requests, to design-level containers, to code modules, to tests and quality checks.
+![Whole-system traceability graph](<Impact Analysis imgs/Emerald_Phase2_TraceabilityGraph - 7 - Done-Traceability - WholeSystem.drawio.png>)
 
-```mermaid
-flowchart TD
-  F1["F1 Native Android Mobile Client"]
-  F2["F2 Parcel Status Tracking Page"]
-  F3["F3 Address Auto-fill and Validation"]
+**Reading the graph**
 
-  D_WEB["Design: Web Application Container"]
-  D_ANDROID["Design: Android Mobile App Container"]
-  D_BACKEND["Design: Express Backend API Container"]
-  D_DB["Design: PostgreSQL Database Container"]
-  D_CI["Design: CI and SonarCloud Quality Pipeline"]
+- **Requirements column** (yellow) — 3 Phase-2 features (F1–F3), 13 functional requirements (FR-01 to FR-13), 5 non-functional requirements (NFR-01 to NFR-05), Backend Quality, and CI/CD Quality.
+- **Design column** (blue) — 5 design nodes: the 4 runtime C4 containers from the Phase 2 Container Diagram — Web Frontend (DFE), Backend API (DBE), PostgreSQL Database (DDB), Android Client (DAND) — plus the CI/CD Pipeline (DCI). CI/CD is build-time tooling, not a runtime C4 container; it is included so the CI/CD requirements and files can be traced.
+- **Code column** (white) — every code module of the system, grouped vertically by container.
+- **Test column** (purple) — automated test modules.
 
-  C_WEB_LOGIN["Code: Web LoginPage.jsx"]
-  C_WEB_TRACK["Code: Web TrackingPage.jsx"]
-  C_WEB_CREATE["Code: Web CreateShipmentPage.jsx"]
-  C_WEB_HISTORY["Code: Web HistoryPage.jsx"]
-  C_ANDROID_NAV["Code: Android AppNavigation.kt"]
-  C_ANDROID_TRACK["Code: Android TrackingScreen.kt"]
-  C_ANDROID_CREATE["Code: Android CreateShipmentScreen.kt"]
-  C_ANDROID_HISTORY["Code: Android HistoryScreen.kt"]
-  C_ANDROID_SESSION["Code: Android SessionManager.kt"]
-  C_ANDROID_ZIP["Code: Android ThaiPostalCodes.kt"]
-  C_ANDROID_API["Code: Android ApiService.kt and RetrofitClient.kt"]
-  C_BACKEND_SERVER["Code: Backend server.js"]
-  C_BACKEND_DB["Code: Backend db.js"]
-  C_BACKEND_USERS["Code: Backend routes/users.js"]
-  C_BACKEND_SHIPMENTS["Code: Backend routes/shipments.js"]
-  C_BACKEND_NOTIFICATIONS["Code: Backend routes/notifications.js"]
-  C_BACKEND_ACTIVITY["Code: Backend routes/activity.js"]
-  C_DB_SCHEMA["Code: setup.sql"]
-  C_CI["Code: .github/workflows/ci.yml"]
-  C_SONAR["Code: sonar-project.properties"]
+Edges are color-coded by target container so the influence of each subsystem is visually traceable end-to-end:
 
-  T_BACKEND["Tests: Jest and Supertest backend route tests"]
-  T_ANDROID_ZIP["Tests: Android ThaiPostalCodesTest.kt"]
-  T_ANDROID_API["Tests: Android RetrofitClientTest.kt"]
-  T_MANUAL["Tests: Manual web and Android walkthrough"]
-  T_HISTORY["Tests: Two-account history isolation check"]
-  T_SONAR["Quality: SonarCloud analysis and coverage report"]
+| Edge color | Meaning |
+|---|---|
+| 🔵 Blue | Requirement → Web Frontend |
+| 🟢 Green | Requirement → Backend API or Backend code → Test |
+| 🟣 Purple | Requirement → Database |
+| 🟠 Orange | Requirement → Android Client or Android code → Test |
+| 🔴 Red | Requirement → CI/CD Pipeline |
+| ⚫ Slate | Internal "depends-on" relationships within the Design and Code columns |
 
-  F1 --> D_ANDROID
-  F1 --> D_BACKEND
-  F1 --> D_CI
-  F2 --> D_WEB
-  F2 --> D_ANDROID
-  F2 --> D_BACKEND
-  F2 --> D_DB
-  F3 --> D_WEB
-  F3 --> D_ANDROID
+---
 
-  D_WEB --> C_WEB_LOGIN
-  D_WEB --> C_WEB_TRACK
-  D_WEB --> C_WEB_CREATE
-  D_WEB --> C_WEB_HISTORY
-  D_ANDROID --> C_ANDROID_NAV
-  D_ANDROID --> C_ANDROID_TRACK
-  D_ANDROID --> C_ANDROID_CREATE
-  D_ANDROID --> C_ANDROID_HISTORY
-  D_ANDROID --> C_ANDROID_SESSION
-  D_ANDROID --> C_ANDROID_ZIP
-  D_ANDROID --> C_ANDROID_API
-  D_BACKEND --> C_BACKEND_SERVER
-  D_BACKEND --> C_BACKEND_DB
-  D_BACKEND --> C_BACKEND_USERS
-  D_BACKEND --> C_BACKEND_SHIPMENTS
-  D_BACKEND --> C_BACKEND_NOTIFICATIONS
-  D_BACKEND --> C_BACKEND_ACTIVITY
-  D_DB --> C_DB_SCHEMA
-  D_CI --> C_CI
-  D_CI --> C_SONAR
+## 4.2 Traceability Graph — Affected Part
 
-  C_WEB_LOGIN --> C_BACKEND_USERS
-  C_WEB_TRACK --> C_BACKEND_SHIPMENTS
-  C_WEB_CREATE --> C_BACKEND_SHIPMENTS
-  C_WEB_HISTORY --> C_BACKEND_SHIPMENTS
-  C_ANDROID_NAV --> C_ANDROID_TRACK
-  C_ANDROID_NAV --> C_ANDROID_CREATE
-  C_ANDROID_NAV --> C_ANDROID_HISTORY
-  C_ANDROID_TRACK --> C_ANDROID_API
-  C_ANDROID_CREATE --> C_ANDROID_API
-  C_ANDROID_CREATE --> C_ANDROID_ZIP
-  C_ANDROID_HISTORY --> C_ANDROID_API
-  C_ANDROID_SESSION --> C_ANDROID_NAV
-  C_ANDROID_API --> C_BACKEND_SHIPMENTS
-  C_ANDROID_API --> C_BACKEND_USERS
-  C_BACKEND_SERVER --> C_BACKEND_USERS
-  C_BACKEND_SERVER --> C_BACKEND_SHIPMENTS
-  C_BACKEND_SERVER --> C_BACKEND_NOTIFICATIONS
-  C_BACKEND_SERVER --> C_BACKEND_ACTIVITY
-  C_BACKEND_USERS --> C_BACKEND_DB
-  C_BACKEND_SHIPMENTS --> C_BACKEND_DB
-  C_BACKEND_NOTIFICATIONS --> C_BACKEND_DB
-  C_BACKEND_ACTIVITY --> C_BACKEND_DB
-  C_BACKEND_DB --> C_DB_SCHEMA
-  C_CI --> T_BACKEND
-  C_CI --> T_SONAR
-  C_SONAR --> T_SONAR
-  C_BACKEND_SERVER --> T_BACKEND
-  C_BACKEND_USERS --> T_BACKEND
-  C_BACKEND_SHIPMENTS --> T_BACKEND
-  C_BACKEND_NOTIFICATIONS --> T_BACKEND
-  C_BACKEND_ACTIVITY --> T_BACKEND
-  C_ANDROID_ZIP --> T_ANDROID_ZIP
-  C_ANDROID_API --> T_ANDROID_API
-  C_WEB_TRACK --> T_MANUAL
-  C_WEB_CREATE --> T_MANUAL
-  C_WEB_HISTORY --> T_HISTORY
-  C_ANDROID_TRACK --> T_MANUAL
-  C_ANDROID_CREATE --> T_MANUAL
-  C_ANDROID_HISTORY --> T_MANUAL
-```
+The affected-part traceability graph uses the same whole-system layout, but only the requirements, design containers, code modules, and tests that were touched by the Phase 2 change requests retain their connecting lines. Unaffected nodes remain visible in their column slots so the reader can see the full scope of the system, but they are isolated (no incoming or outgoing edges), which highlights the affected subgraph.
 
-## 3. Affected-Only Traceability Graph
+![Affected-part traceability graph](<Impact Analysis imgs/Emerald_Phase2_TraceabilityGraph - 7 - Done-Traceability - Affected Part.drawio.png>)
 
-This graph filters the traceability view to only the parts affected by the revised Phase 2 change requests.
+**Affected scope summary**
 
-```mermaid
-flowchart TD
-  F1["F1 Android Client"]
-  F2["F2 Parcel Tracking"]
-  F3["F3 Address Auto-fill"]
-
-  CR01["CR-01 Web Login Auth Fix"]
-  CR02["CR-02 Backend PostgreSQL Route Fixes"]
-  CR03["CR-03 Tracking With Cloud Database"]
-  CR04["CR-04 Render Cloud Deployment"]
-  CR05["CR-05 Native Android Mobile Client"]
-  CR06["CR-06 Postal Code Auto-fill"]
-  CR07["CR-07 Backend Tests"]
-  CR08["CR-08 CI and SonarCloud"]
-  CR09["CR-09 History Page Data Leak Fix"]
-
-  WEB_LOGIN["Web LoginPage.jsx"]
-  WEB_TRACK["Web TrackingPage.jsx"]
-  WEB_CREATE["Web CreateShipmentPage.jsx"]
-  WEB_HISTORY["Web HistoryPage.jsx"]
-  AND_NAV["Android AppNavigation.kt"]
-  AND_TRACK["Android TrackingScreen.kt"]
-  AND_CREATE["Android CreateShipmentScreen.kt"]
-  AND_HISTORY["Android HistoryScreen.kt"]
-  AND_SESSION["Android SessionManager.kt"]
-  AND_ZIP["Android ThaiPostalCodes.kt"]
-  AND_API["Android ApiService.kt and RetrofitClient.kt"]
-  SERVER["Backend server.js"]
-  DB["Backend db.js"]
-  USERS["Backend routes/users.js"]
-  SHIPMENTS["Backend routes/shipments.js"]
-  NOTIFICATIONS["Backend routes/notifications.js"]
-  ACTIVITY["Backend routes/activity.js"]
-  SCHEMA["PostgreSQL setup.sql"]
-  TESTS["Jest and Supertest tests"]
-  AND_TESTS["Android unit tests"]
-  CI["GitHub Actions workflow"]
-  SONAR["SonarCloud configuration"]
-  HISTORY_CHECK["Two-account history isolation check"]
-
-  F1 --> CR04
-  F1 --> CR05
-  F2 --> CR03
-  F2 --> CR05
-  F3 --> CR06
-
-  CR01 --> WEB_LOGIN
-  CR01 --> USERS
-  CR02 --> USERS
-  CR02 --> SHIPMENTS
-  CR02 --> NOTIFICATIONS
-  CR02 --> ACTIVITY
-  CR02 --> DB
-  CR03 --> WEB_TRACK
-  CR03 --> AND_TRACK
-  CR03 --> SHIPMENTS
-  CR03 --> DB
-  CR03 --> SCHEMA
-  CR04 --> WEB_LOGIN
-  CR04 --> WEB_TRACK
-  CR04 --> WEB_CREATE
-  CR04 --> WEB_HISTORY
-  CR04 --> AND_API
-  CR04 --> SERVER
-  CR05 --> AND_NAV
-  CR05 --> AND_TRACK
-  CR05 --> AND_CREATE
-  CR05 --> AND_HISTORY
-  CR05 --> AND_SESSION
-  CR05 --> AND_API
-  CR06 --> WEB_CREATE
-  CR06 --> AND_CREATE
-  CR06 --> AND_ZIP
-  CR07 --> SERVER
-  CR07 --> USERS
-  CR07 --> SHIPMENTS
-  CR07 --> NOTIFICATIONS
-  CR07 --> ACTIVITY
-  CR07 --> TESTS
-  CR08 --> CI
-  CR08 --> SONAR
-  CR08 --> TESTS
-  CR09 --> WEB_HISTORY
-  CR09 --> SHIPMENTS
-  CR09 --> HISTORY_CHECK
-
-  WEB_LOGIN --> USERS
-  WEB_TRACK --> SHIPMENTS
-  WEB_CREATE --> SHIPMENTS
-  WEB_HISTORY --> SHIPMENTS
-  AND_NAV --> AND_TRACK
-  AND_NAV --> AND_CREATE
-  AND_NAV --> AND_HISTORY
-  AND_SESSION --> AND_NAV
-  AND_TRACK --> AND_API
-  AND_CREATE --> AND_API
-  AND_CREATE --> AND_ZIP
-  AND_HISTORY --> AND_API
-  AND_API --> USERS
-  AND_API --> SHIPMENTS
-  USERS --> DB
-  SHIPMENTS --> DB
-  NOTIFICATIONS --> DB
-  ACTIVITY --> DB
-  DB --> SCHEMA
-  TESTS --> SERVER
-  TESTS --> USERS
-  TESTS --> SHIPMENTS
-  TESTS --> NOTIFICATIONS
-  TESTS --> ACTIVITY
-  AND_TESTS --> AND_ZIP
-  CI --> TESTS
-  SONAR --> TESTS
-```
-
-## 4. Software Lifecycle Objects (SLOs)
-
-For the directed SLO graph and matrix, each code module is treated as one SLO.
-
-| SLO ID | Code module | Responsibility |
+| Layer | Affected count | Notable members |
 |---|---|---|
-| S1 | Web `LoginPage.jsx` | Calls real backend login and stores authenticated user data. |
-| S2 | Web `TrackingPage.jsx` | Lets web users search by tracking number and displays parcel status. |
-| S3 | Web `CreateShipmentPage.jsx` | Creates shipments and performs web postal-code auto-fill. |
-| S4 | Web `HistoryPage.jsx` | Fetches shipment history for the authenticated user. |
-| S5 | Android `AppNavigation.kt` | Connects Android screens and routes users to tracking, shipment creation, history, payment, and settings. |
-| S6 | Android `TrackingScreen.kt` | Lets Android users search by tracking number and displays shipment status. |
-| S7 | Android `CreateShipmentScreen.kt` | Lets Android users create shipments and uses postal-code auto-fill. |
-| S8 | Android `HistoryScreen.kt` | Shows Android shipment history using the shared backend. |
-| S9 | Android `SessionManager.kt` | Persists Android login/session data using DataStore. |
-| S10 | Android `ThaiPostalCodes.kt` | Maps Thai postal-code prefixes to provinces. |
-| S11 | Android `ApiService.kt` and `RetrofitClient.kt` | Defines Android API calls to the shared backend. |
-| S12 | Backend `server.js` | Creates the Express app, mounts routes, and supports test imports. |
-| S13 | Backend `routes/users.js` | Handles login, registration, profile, and user statistics. |
-| S14 | Backend `routes/shipments.js` | Handles shipment creation, tracking lookup, recent shipments, history, and monthly data. |
-| S15 | Backend `routes/notifications.js` and `routes/activity.js` | Handles notifications and dashboard activity data. |
-| S16 | Backend `db.js` | Provides PostgreSQL connection and query access. |
-| S17 | Backend `setup.sql` | Defines PostgreSQL schema for users, shipments, payments, notifications, and activity logs. |
-| S18 | Backend Jest/Supertest tests | Verifies route behavior and error handling. |
-| S19 | CI and SonarCloud configuration | Runs builds, tests, coverage upload, and SonarCloud analysis. |
+| Requirements | 8 of 23 | F1, F2, F3, FR-03, FR-10, NFR-01, Backend Quality, CI/CD Quality |
+| Design nodes | 5 of 5 | DFE, DBE, DDB, DAND (the 4 C4 containers) and DCI (CI/CD) — every design node is touched |
+| Code modules | 39 of 48 | All Android modules (new), 7 backend files (PostgreSQL migration + tests), 7 web pages (login/history fixes + tracking + auto-fill), `setup.sql`, all CI configs |
+| Tests | 15 of 15 | Every Phase-2 test module |
 
-## 5. Directed SLO Graph
+---
 
-```mermaid
-flowchart LR
-  S1["S1 Web LoginPage"]
-  S2["S2 Web TrackingPage"]
-  S3["S3 Web CreateShipmentPage"]
-  S4["S4 Web HistoryPage"]
-  S5["S5 Android AppNavigation"]
-  S6["S6 Android TrackingScreen"]
-  S7["S7 Android CreateShipmentScreen"]
-  S8["S8 Android HistoryScreen"]
-  S9["S9 Android SessionManager"]
-  S10["S10 Android ThaiPostalCodes"]
-  S11["S11 Android ApiService and RetrofitClient"]
-  S12["S12 Backend server.js"]
-  S13["S13 users.js"]
-  S14["S14 shipments.js"]
-  S15["S15 notifications.js and activity.js"]
-  S16["S16 db.js"]
-  S17["S17 setup.sql"]
-  S18["S18 Backend tests"]
-  S19["S19 CI and SonarCloud"]
+## 4.3 SLO Directed Graph
 
-  S1 --> S13
-  S2 --> S14
-  S3 --> S14
-  S4 --> S14
-  S5 --> S6
-  S5 --> S7
-  S5 --> S8
-  S9 --> S5
-  S6 --> S11
-  S7 --> S11
-  S7 --> S10
-  S8 --> S11
-  S11 --> S13
-  S11 --> S14
-  S12 --> S13
-  S12 --> S14
-  S12 --> S15
-  S13 --> S16
-  S14 --> S16
-  S15 --> S16
-  S16 --> S17
-  S18 --> S12
-  S18 --> S13
-  S18 --> S14
-  S18 --> S15
-  S19 --> S18
-```
+Per the discussion with Aj. Chaiyong on 30 April 2026 at 17:02, "let's use the bigger logical modules — the ones with 8–10 SLOs". We therefore grouped the 39 affected code files into 10 logical Software Lifecycle Objects (SLOs), where each SLO is a cohesive package of files that is developed, tested, and deployed as a unit.
 
-## 6. Connectivity Matrix With Distances
+![SLO directed graph](<Impact Analysis imgs/Emerald_Phase2_TraceabilityGraph - 7 - Done-SLOs.drawio.png>)
 
-Distance means the number of directed edges from the row SLO to the column SLO. `0` means the same SLO, `1` means directly connected, `2` means reachable through one intermediate SLO, and `-` means no directed path was identified in this impact model.
+**SLO definitions (10 logical modules / 39 affected code files)**
 
-| From / To | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 | S9 | S10 | S11 | S12 | S13 | S14 | S15 | S16 | S17 | S18 | S19 |
-|---        |1. |2. |3. |4. |5  |6. |7. |8. |9. |10.|11 |12 |13.|14.|15.|16.|17.|18.|19.|
-| S1        | 0 | - | - | - | - | - | - | - | - | - | - | - | 1 | - | - | 2 | 3 | - | - |
-| S2        | - | 0 | - | - | - | - | - | - | - | - | - | - | - | 1 | - | 2 | 3 | - | - |
-| S3        | - | - | 0 | - | - | - | - | - | - | - | - | - | - | 1 | - | 2 | 3 | - | - |
-| S4        | - | - | - | 0 | - | - | - | - | - | - | - | - | - | 1 | - | 2 | 3 | - | - |
-| S5        | - | - | - | - | 0 | 1 | 1 | 1 | - | 2 | 2 | - | 3 | 3 | - | 4 | 5 | - | - |
-| S6        | - | - | - | - | - | 0 | - | - | - | - | 1 | - | 2 | 2 | - | 3 | 4 | - | - |
-| S7        | - | - | - | - | - | - | 0 | - | - | 1 | 1 | - | 2 | 2 | - | 3 | 4 | - | - |
-| S8        | - | - | - | - | - | - | - | 0 | - | - | 1 | - | 2 | 2 | - | 3 | 4 | - | - |
-| S9        | - | - | - | - | 1 | 2 | 2 | 2 | 0 | 3 | 3 | - | 4 | 4 | - | 5 | 6 | - | - |
-| S10       | - | - | - | - | - | - | - | - | - | 0 | - | - | - | - | - | - | - | - | - |
-| S1        | - | - | - | - | - | - | - | - | - | - | 0 | - | 1 | 1 | - | 2 | 3 | - | - |
-| S12       | - | - | - | - | - | - | - | - | - | - | - | 0 | 1 | 1 | 1 | 2 | 3 | - | - |
-| S13       | - | - | - | - | - | - | - | - | - | - | - | - | 0 | - | - | 1 | 2 | - | - |
-| S14       | - | - | - | - | - | - | - | - | - | - | - | - | - | 0 | - | 1 | 2 | - | - |
-| S15       | - | - | - | - | - | - | - | - | - | - | - | - | - | - | 0 | 1 | 2 | - | - |
-| S16       | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | 0 | 1 | - | - |
-| S17       | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | 0 | - | - |
-| S18       | - | - | - | - | - | - | - | - | - | - | - | 1 | 1 | 1 | 1 | 2 | 3 | 0 | - |
-| S19       | - | - | - | - | - | - | - | - | - | - | - | 2 | 2 | 2 | 2 | 3 | 4 | 1 | 0 |
+| SLO | Logical Module | Underlying Files |
+|---|---|---|
+| SLO0 | Backend Core | `server.js`, `db.js`, `jest.config` |
+| SLO1 | Backend Routes | `users.js`, `shipments.js`, `notifications.js`, `activity.js` |
+| SLO2 | Database | `setup.sql` |
+| SLO3 | Web Frontend | LoginPage, RegisterPage, UserDashboard, CreateShipmentPage, TrackingPage, HistoryPage, PaymentPage |
+| SLO4 | Android Entry | `MainActivity.kt`, `AppNavigation.kt` |
+| SLO5 | Android Networking | `RetrofitClient.kt`, `ApiService.kt` |
+| SLO6 | Android Models | `User.kt`, `Shipment.kt`, `Notification.kt` |
+| SLO7 | Android Utilities | `SessionManager.kt`, `ThaiPostalCodes.kt`, `ShipmentUtils.kt`, `app/build.gradle.kts` |
+| SLO8 | Android Screens | LoginScreen, RegisterScreen, DashboardScreen, CreateShipmentScreen, PaymentScreen, ShippingLabelScreen, TrackingScreen, HistoryScreen, SettingsScreen |
+| SLO9 | CI/CD | `ci.yml`, `sonar-project.properties` (web), `android-ci.yml`, `sonar-project.properties` (Android) |
 
-## 7. Impact by Change Request
+**Directed dependencies (13 edges)**
 
-| CR | Directly affected SLOs | Secondary affected SLOs | Impact summary |
-|---|---|---|---|
-| CR-01 | S1, S13 | S16, S17, S18, S19 | Web login now depends on real backend authentication and correct session data storage. |
-| CR-02 | S13, S14, S15, S16, S17 | S1, S2, S3, S4, S6, S7, S8, S11, S18 | PostgreSQL route conversion affects every web and Android feature that reads or writes backend data. |
-| CR-03 | S2, S6, S11, S14, S16, S17 | S18, S19 | Parcel tracking depends on shipment query correctness, Android Retrofit calls, and the cloud database schema. |
-| CR-04 | S1, S2, S3, S4, S11, S12 | S13, S14, S15, S16, S19 | Moving from localhost to Render affects all clients that call the API and the backend startup/deployment path. |
-| CR-05 | S5, S6, S7, S8, S9, S11 | S13, S14, S16, S17 | The Android app introduces a new client platform that reuses existing backend APIs and requires session, navigation, and networking support. |
-| CR-06 | S3, S7, S10 | S14, S16, S17 | Postal-code auto-fill mainly affects create-shipment UI logic, but submitted shipment data still flows into backend shipment storage. |
-| CR-07 | S12, S13, S14, S15, S18 | S16, S17, S19 | Automated tests require the backend app to be importable and route behavior to be deterministic. |
-| CR-08 | S18, S19 | S12, S13, S14, S15, S16 | CI and SonarCloud depend on tests, coverage output, and stable project configuration. |
-| CR-09 | S4, S14 | S1, S16, S17, S18 | The History page must use the logged-in user's ID instead of a hard-coded user ID, otherwise one user can see another user's shipment history. |
+The arrows in the SLO graph encode "depends-on" relationships: an arrow from SLO X to SLO Y means a change to SLO Y can propagate into SLO X. The 13 edges are:
 
-## 8. Easy and Difficult Change Requests
+1. Backend Routes → Backend Core (routes import `db.js`)
+2. Backend Core → Database (`db.js` connects to the schema)
+3. Backend Routes → Database (queries reference the schema)
+4. Web Frontend → Backend Routes (REST API consumption)
+5. Android Entry → Android Screens (NAV imports each Compose screen)
+6. Android Screens → Android Networking (screens call API endpoints)
+7. Android Screens → Android Models (screens read/write data classes)
+8. Android Screens → Android Utilities (screens use SessionManager, ThaiPostalCodes, etc.)
+9. Android Networking → Android Models (request and response types)
+10. Android Networking → Backend Core (Retrofit base URL points to the deployed server)
+11. CI/CD → Backend Core (CI tests backend code)
+12. CI/CD → Android Entry (CI builds the Android app)
+13. CI/CD → Web Frontend (CI lints and tests the web frontend)
 
-### Easy to Apply
+---
 
-| Change request | Reason |
-|---|---|
-| CR-01: Fix Web Login to Use Real Backend Authentication | The change is localized to the web login page and existing `/api/users/login` route. The main risk is whether the saved session fields match the dashboard and history pages. |
-| CR-06: Add Thai Postal Code Address Auto-fill and Validation | The postal-code lookup is mostly local UI logic in the web and Android create-shipment screens. The lookup table is deterministic and easy to verify with unit tests and manual form checks. |
-| CR-08: Add CI Pipeline and SonarCloud Quality Monitoring | This is mostly configuration once the build, test, and coverage commands are known. GitHub Actions repeats the same process after every push. |
-| CR-09: Fix Cross-User Data Leak on the History Page | The code change is small because it replaces the hard-coded `USER_ID = 1` with the logged-in `userId` from local storage. The security impact is high, but the affected web page is narrow and easy to test with two accounts. |
+## 4.4 Reachability Matrix
 
-### Difficult to Apply
+The reachability matrix lists the shortest-path distance from each row SLO to each column SLO in the SLO directed graph. A cell value of `n` means that the row SLO can reach the column SLO through `n` directed edges. A value of `0` means the column SLO is not reachable from the row SLO. The diagonal `—` represents an SLO compared to itself.
 
-| Change request | Reason |
-|---|---|
-| CR-02: Correct Backend Route Logic After Database Conversion | This affects many APIs at once because MySQL and PostgreSQL differ in placeholders, date intervals, auto-increment behavior, and returned rows. A mistake can break login, shipments, notifications, activity, tracking, or history together. |
-| CR-03: Support Parcel Status Tracking With Cloud Database | Tracking depends on the database schema, deployed database availability, shipment query correctness, web UI, Android UI, and Retrofit response models. |
-| CR-04: Adapt the System for Cloud Deployment on Render | Deployment changes affect environment variables, API base URLs, database credentials, backend startup behavior, and both clients. Failures may only appear after deployment. |
-| CR-05: Implement Native Android Mobile Client | This is the largest feature because it creates a new native platform with nine screens, navigation, session persistence, networking, and visual consistency with the web application. |
-| CR-07: Add Automated Backend Test Suite and Coverage | Tests require refactoring `server.js`, isolating database state, handling asynchronous route behavior, and preventing mock leakage between test files. |
+![Reachability matrix](<Impact Analysis imgs/Emerald_Phase2_TraceabilityGraph - 7 - Done-Reachability Matrix.drawio.png>)
 
-## 9. Expectations From Previous Developers
+**Computed shortest-path distances (from row to column)**
 
-To make maintenance easier, the previous developers should have provided:
+|     | SLO0 | SLO1 | SLO2 | SLO3 | SLO4 | SLO5 | SLO6 | SLO7 | SLO8 | SLO9 |
+|-----|------|------|------|------|------|------|------|------|------|------|
+| **SLO0** | — | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| **SLO1** | 1 | — | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| **SLO2** | 0 | 0 | — | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| **SLO3** | 2 | 1 | 2 | — | 0 | 0 | 0 | 0 | 0 | 0 |
+| **SLO4** | 3 | 0 | 4 | 0 | — | 2 | 2 | 2 | 1 | 0 |
+| **SLO5** | 1 | 0 | 2 | 0 | 0 | — | 1 | 0 | 0 | 0 |
+| **SLO6** | 0 | 0 | 0 | 0 | 0 | 0 | — | 0 | 0 | 0 |
+| **SLO7** | 0 | 0 | 0 | 0 | 0 | 0 | 0 | — | 0 | 0 |
+| **SLO8** | 2 | 0 | 3 | 0 | 0 | 1 | 1 | 1 | — | 0 |
+| **SLO9** | 1 | 2 | 2 | 1 | 1 | 3 | 3 | 3 | 2 | — |
 
-| Expected artifact or practice | Why it would help maintenance |
-|---|---|
-| Clear API documentation | Android and web clients need exact endpoints, request bodies, response fields, and error formats. |
-| A reliable setup guide | Database setup, environment variables, backend startup, and frontend startup should be reproducible by a maintainer. |
-| Automated backend tests | Existing tests would reveal whether PostgreSQL migration, tracking, login, and shipment changes broke old behavior. |
-| Consistent schema documentation | A documented data model would reduce time spent discovering what each table and column means. |
-| No hard-coded user IDs in user-facing pages | The History page data leak shows why session-dependent features should not contain placeholder user IDs after handover. |
-| Separation between frontend pricing/address logic and backend business logic | Shared rules would be easier to reuse across web and Android without duplicating behavior. |
-| Deployment notes | The original project was localhost-focused, so cloud deployment required extra discovery and configuration work. |
-| Known limitation list | Maintainers should know which features are simulated, partial, insecure, or broken before making Phase 2 changes. |
-| Traceability between requirements, design, code, and tests | This would make impact analysis faster and reduce the risk of missing affected modules. |
+**Architectural observations**
 
-## 10. Conclusion
+- **SLO9 (CI/CD)** sits at the top of the dependency tree — it transitively reaches every other SLO. A change to CI/CD scripts itself, however, has no downstream consumers (column SLO9 is empty), because no runtime code depends on CI configuration.
+- **SLO2 (Database), SLO6 (Models), SLO7 (Utilities)** are leaf nodes — they have no outgoing edges. They are depended-on by many other SLOs (high incoming reachability) but never propagate change downstream.
+- **The Android client reaches the Backend** through `RetrofitClient` (SLO5 → SLO0 = 1 hop), making the longest realistic path **Android Entry → Screens → Networking → Backend Core → Database (4 hops)**. This is the runtime call chain a single Android user action can trigger.
 
-The highest-impact changes are the PostgreSQL conversion, cloud deployment, native Android client, and shared tracking/history APIs because they sit on the dependency path for both the web application and Android application. The address auto-fill and History page fixes are smaller in code size, but the History page fix has high security importance because it prevents cross-user exposure of shipment history.
+These distances translate directly into impact analysis: the lower the distance from the changed SLO to other SLOs, and the higher the number of SLOs that depend on it, the wider the ripple effect of a change.
+
+---
+
+## 4.5 Change Request Difficulty Analysis
+
+The matrix and the affected traceability graph let us reason about which change requests were easy and which were difficult to apply during Phase 2. The judgement combines three factors:
+
+1. **Surface size** — how many SLOs and individual files the change touches.
+2. **Downstream reach** — using the reachability matrix's incoming edges for each SLO touched, how many other SLOs can be affected by ripple.
+3. **Cross-subsystem coordination** — whether the change spans multiple containers (Backend, Web, Android, DB, CI/CD) that must agree.
+
+### 4.5.1 Easy change requests
+
+These changes were quick to apply because they were either scoped to a single SLO, additive (no behavior change for existing consumers), or sat at a leaf of the reachability graph with no downstream impact.
+
+#### CR-09 — Fix Cross-User Data Leak on the History Page (Corrective)
+
+- **Surface size**: 1 file, 1 line. Replaced `const USER_ID = 1` with `localStorage.getItem("userId") || 1` in `HistoryPage.jsx`.
+- **SLOs affected**: only **SLO3 (Web Frontend)**. From the matrix, only SLO9 reaches SLO3, so the change cannot ripple to anything else at runtime.
+- **Why it was easy**: The pattern was already proven in `UserDashboard.jsx` line 71, so the fix was a one-line copy-and-adapt, with verification by logging in as two different users.
+
+#### CR-08 — Add CI Pipeline and SonarCloud Quality Monitoring (Preventive)
+
+- **Surface size**: 4 YAML/properties files in **SLO9 (CI/CD)** only.
+- **SLOs affected**: only SLO9. Column SLO9 in the matrix is entirely 0/`—`, so **no other SLO depends on CI** — its changes never break runtime code.
+- **Why it was easy**: Adding a new GitHub Actions workflow and a SonarCloud configuration is purely additive; existing tests and source code did not need to change for the pipeline to pass.
+
+#### CR-07 — Add Automated Backend Test Suite and Coverage (Preventive)
+
+- **Surface size**: New Jest/Supertest test files plus a small refactor of `server.js` so the Express app can be imported without auto-listening.
+- **SLOs affected**: SLO0 (Backend Core, only the test entry point) plus the new test modules.
+- **Why it was easy**: Test code is additive — it does not change the production behavior of the routes, so existing consumers (Web FE, Android, CI) keep working unchanged. The only non-trivial step was the `server.js` refactor, which was a 3-line change.
+
+#### CR-06 — Add Thai Postal Code Address Auto-Fill and Validation (Perfective)
+
+- **Surface size**: 3 files: `ThaiPostalCodes.kt` (Android utility, new), `CreateShipmentScreen.kt` (Android screen, integration), `CreateShipmentPage.jsx` (web page, integration).
+- **SLOs affected**: **SLO3 (Web Frontend), SLO7 (Android Utilities), SLO8 (Android Screens)**.
+- **Why it was easy**: Although the change spans two subsystems, the integration points are extremely localized — both clients had a single shipment-creation form that needed an `onChange` lookup. The shared Thai postal-code map is a self-contained look-up table with no external dependency.
+
+### 4.5.2 Difficult change requests
+
+These changes were difficult because they either touched many files, hit SLOs that many others depend on, required cross-subsystem coordination, or all three.
+
+#### CR-05 — Implement Native Android Mobile Client (Feature 1) (Perfective)
+
+- **Surface size**: ~20 new files spread across **5 SLOs**: Android Entry (SLO4), Networking (SLO5), Models (SLO6), Utilities (SLO7), and Screens (SLO8).
+- **Downstream reach**: Inside Android, every screen depends on Networking, Models, and Utilities — the longest internal chain is `Entry → Screens → Networking → Models` (3 hops). The Android client also adds the cross-subsystem dependency `Networking → Backend Core` (SLO5 → SLO0), so Android consumes the deployed REST API.
+- **Why it was difficult**:
+  1. **Greenfield platform**: an entirely new Kotlin + Jetpack Compose codebase had to be built from zero, including navigation graph, Material 3 theme, DataStore session, and 9 user-facing screens.
+  2. **Backend contract alignment**: every existing route had to be re-consumed correctly through Retrofit, which exposed Phase-1 bugs (the login route's `setTimeout` shortcut, the History page's hard-coded `USER_ID`) that became blocking issues for Android.
+  3. **End-to-end verification cost**: the change has to be validated on an emulator across all 9 screens with realistic data, not just unit-tested.
+
+#### CR-03 / CR-04 — Cloud Database and Render Deployment (Adaptive)
+
+These two CRs are conceptually paired — the deployment forced the database move and vice versa.
+
+- **Surface size**:
+  - CR-03 touches **SLO0 (Backend Core)** (`db.js` rewrite for `pg`), **SLO1 (Backend Routes)** (parameter syntax in every query), and **SLO2 (Database)** (`setup.sql` rewrite from MySQL DDL to PostgreSQL DDL).
+  - CR-04 touches **SLO0**, **SLO3 (Web Frontend BASE_URL)**, **SLO5 (Android Networking BASE_URL)**, and **SLO9 (CI/CD)**.
+- **Downstream reach**: From the matrix, **column SLO0 has 6 incoming SLOs** and **column SLO2 has 7 incoming SLOs** — every other layer eventually reaches Backend Core and the Database. A bug in the cloud DB connection or the deployed URL breaks the Web Frontend, the Android client, and the CI pipeline simultaneously.
+- **Why it was difficult**:
+  1. **Multi-subsystem coordination**: the URL had to change in four places at once (`HistoryPage.jsx`, `UserDashboard.jsx`, every `*.jsx` that calls `fetch`, and `RetrofitClient.kt`'s `BASE_URL`). Forgetting any one of them produces a confusing runtime mix where some screens hit localhost and some hit Render.
+  2. **Subtle SQL syntax differences**: MySQL and PostgreSQL diverge on placeholder syntax (`?` vs `$1`), `INSERT ... RETURNING`, `CASE WHEN`, and date-interval literals. Each route file had to be audited line by line.
+  3. **Render free-tier cold starts**: a fresh deployment takes ~50 seconds to wake from idle, which initially looked like a network bug from the Android emulator and required HTTP timeout adjustments.
+
+#### CR-02 — Correct Backend Route Logic After Database Conversion (Adaptive)
+
+- **Surface size**: 4 route files (`users.js`, `shipments.js`, `notifications.js`, `activity.js`) plus `db.js` — entirely inside **SLO0 + SLO1**.
+- **Downstream reach**: From the matrix, **2 SLOs reach Backend Routes**: Web Frontend directly (SLO3 → SLO1 = 1) and CI/CD in two hops (SLO9 → SLO1 = 2). Android Networking does not reach Backend Routes in this graph (SLO5 → SLO1 = 0), because its edge is modelled to Backend Core through the Retrofit base URL. **6 SLOs reach Backend Core**. A query bug in any route file silently breaks a consumer screen on a different subsystem.
+- **Why it was difficult**:
+  1. **Hidden coupling between SLO1 and SLO0**: routes use `db.js` helpers, so a parameter-style mismatch in `db.js` (MySQL `?` vs PostgreSQL `$1`) propagates to every route.
+  2. **No tests existed before this CR**: discoveries were manual — running each endpoint against the new database one by one. CR-07 was added partly to prevent this class of regression in the future.
+
+#### CR-01 — Fix Web Login to Use Real Backend Authentication (Corrective)
+
+- **Surface size**: 2 files: `LoginPage.jsx` (real `fetch('/api/users/login')`) and `localStorage` writes for `userId`, `userName`, `userEmail`, `userRole`.
+- **Downstream reach**: Affects **SLO3 (Web Frontend)** and indirectly **SLO1 (Backend Routes)**, which is the auth endpoint.
+- **Why it was difficult (medium-difficult)**: Although the patch itself is small, it depends on `users.js` already being PostgreSQL-clean (CR-02) and on the cloud deployment being live (CR-04). It is the visible failure point that surfaces when any of those upstream issues is wrong, which made the order of execution important — CR-04 → CR-02 → CR-01 → CR-09 had to land before the History page's user-leak fix could be tested with multiple real accounts.
+
+### 4.5.3 Difficulty summary table
+
+| CR | Maintenance Type | SLOs touched | Incoming reach (matrix) | Difficulty |
+|---|---|---|---:|---|
+| CR-09 | Corrective | SLO3 | 1 | **Easy** |
+| CR-08 | Preventive | SLO9 | 0 | **Easy** |
+| CR-07 | Preventive | SLO0 (test entry only) | 6 (but additive) | **Easy** |
+| CR-06 | Perfective | SLO3, SLO7, SLO8 | 1 + 3 + 2 | **Easy** |
+| CR-01 | Corrective | SLO3, SLO1 | 1 + 2 | Medium |
+| CR-02 | Adaptive | SLO0, SLO1 | 6 + 2 | **Difficult** |
+| CR-03 | Adaptive | SLO0, SLO1, SLO2 | 6 + 2 + 7 | **Difficult** |
+| CR-04 | Adaptive | SLO0, SLO3, SLO5, SLO9 | cross-subsystem | **Difficult** |
+| CR-05 | Perfective | SLO4, SLO5, SLO6, SLO7, SLO8 | 5 SLOs (greenfield) | **Difficult** |
+
+---
+
+## 4.6 Conclusion
+
+Phase 2's hardest changes were the ones that touched the foundational layers — Backend Core, Backend Routes, and the Database — because those SLOs have the highest incoming reachability (6, 2, and 7 respectively). The Native Android Mobile Client (CR-05), although it sat in a relatively isolated subsystem, was difficult purely because of its surface size (20 new files across 5 SLOs).
+
+In contrast, the easy changes (CR-06, CR-07, CR-08, CR-09) each touched a leaf SLO or were additive, so their changes had a small or zero ripple in the reachability matrix. This pattern — leaf-SLO and additive changes are cheap, foundational and cross-cutting changes are expensive — is the practical takeaway from the impact analysis and is consistent with the layered architecture that the C4 design was built to encourage.

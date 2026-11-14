@@ -2,7 +2,7 @@
 
 A co-working space management web app I co-developed with a 6-person team in **Phase 1** of ITCS383 (Software Construction). The intent was that a *different* team would inherit and extend this codebase in their own Phase 2.
 
-> Team codename: **Emerald** · Period: Aug – Dec 2025 · My role: co-developer
+> Team name: **Emerald** · Project name: **SpaceHub** · Course period: Jan – May 2026 (Phase 1 came first) · My role: co-developer
 
 ---
 
@@ -11,8 +11,8 @@ A co-working space management web app I co-developed with a 6-person team in **P
 | Role | What they can do |
 |---|---|
 | **Customer** | Browse desks, book in 3 steps, manage profile, see booking history |
-| **Employee** | Check customers in/out, manage equipment inventory |
-| **Manager** | Revenue analytics, expense tracking, manage roles/permissions |
+| **Employee** | View reservations, check customers in, update equipment inventory, record expenses, view the camera list (simulated) |
+| **Manager** | Revenue and expense reports, manage employee accounts, plus everything an employee can do |
 
 All three roles share a single login flow with role-based redirects post-auth.
 
@@ -67,7 +67,8 @@ phase-1-spacehub/
 ```bash
 cd code/implementations
 npm install               # node_modules/ is gitignored
-cp .env.example .env      # then fill in your Neon Postgres URL
+# create a .env file with the variables listed in code/README.md
+# (Neon Postgres URL and the 64-character ENCRYPTION_KEY)
 npm start                 # Express on http://localhost:3000
 ```
 
